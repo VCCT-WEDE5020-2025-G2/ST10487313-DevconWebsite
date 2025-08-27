@@ -3,27 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <title>Enquiry - Devcon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .enquiry-container {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 0 32px;
+        }
+        .enquiry-breadcrumb {
+            color: #888;
+            font-size: 1em;
+            margin-bottom: 18px;
+        }
+        .enquiry-title {
+            font-size: 3em;
+            margin-bottom: 24px;
+            color: #222;
+        }
+        .enquiry-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: flex-start;
+        }
+        .enquiry-form {
+            flex: 2;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px; /* Increased gap for more space between fields */
+        }
+        .enquiry-row {
+            display: flex;
+            gap: 24px; /* Increased gap for more space between columns */
+        }
+        .enquiry-input, .enquiry-textarea, .enquiry-select {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            border-radius: 12px;
+            background: #e0e0e0;
+            font-size: 1.1em;
+            margin-bottom: 0;
+            margin-top: 0;
+            resize: none;
+            box-sizing: border-box;
+        }
+        .enquiry-textarea {
+            min-height: 60px;
+            max-width: 100%;
+        }
+        .enquiry-btn {
+            background: #d32f2f;
+            color: #fff;
+            font-size: 1.3em;
+            padding: 18px 48px;
+            border-radius: 16px;
+            border: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: fit-content;
+            align-self: flex-end;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .enquiry-btn:hover {
+            background: #b71c1c;
+        }
+        .enquiry-summary {
+            flex: 1.2;
+            min-width: 300px;
+            background: #e0e0e0;
+            border-radius: 18px;
+            padding: 32px 28px;
+            margin-top: 18px;
+        }
+        .enquiry-summary-title {
+            font-size: 2em;
+            margin-bottom: 24px;
+            color: #b71c1c;
+        }
+        
+        
+        @media (max-width: 1000px) {
+            .enquiry-flex {
+                flex-direction: column;
+                gap: 32px;
+            }
+            .enquiry-summary {
+                margin-top: 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Use this header for all pages -->
-<header>
-    <div class="container header-flex">
-        <div class="logo">
-    <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
-</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="enquiry-container">
+        <div class="enquiry-breadcrumb">Services / Enquiry</div>
+        <h1 class="enquiry-title">Enquiry</h1>
+        <p style="font-size: 1.15em; color: #444; margin-bottom: 28px;">
+            Please complete the enquiry form below to request a tailored quote for your chosen service.
+        </p>
+        <div class="enquiry-flex">
+            <form class="enquiry-form" autocomplete="off">
+                <div class="enquiry-row">
+                    <div style="flex:1;">
+                        <label class="enquiry-label" for="service">Service</label>
+                        <input class="enquiry-input" type="text" id="service" name="service" placeholder="e.g. Solar Installations">
+                    </div>
+                    <div style="flex:1;">
+                        <label class="enquiry-label" for="timeline">Timeline</label>
+                        <input class="enquiry-input" type="text" id="timeline" name="timeline" placeholder="e.g. 3 months">
+                    </div>
+                </div>
+                <div class="enquiry-row">
+                    <div style="flex:1;">
+                        <label class="enquiry-label" for="name">Name</label>
+                        <input class="enquiry-input" type="text" id="name" name="name" placeholder="Your Name">
+                    </div>
+                    <div style="flex:1;">
+                        <label class="enquiry-label" for="email">Email</label>
+                        <input class="enquiry-input" type="email" id="email" name="email" placeholder="you@email.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="enquiry-label" for="details">Project Details</label>
+                    <textarea class="enquiry-textarea" id="details" name="details" placeholder="Describe your project..."></textarea>
+                </div>
+                <div class="enquiry-row">
+                    <div style="flex:1;">
+                        <label class="enquiry-label" for="budget">Budget (R)</label>
+                        <input class="enquiry-input" type="number" id="budget" name="budget" placeholder="e.g. 50000">
+                    </div>
+                    <div style="flex:1;">
+                        <label class="enquiry-label" for="contact">Contact Method</label>
+                        <input class="enquiry-input" type="text" id="contact" name="contact" placeholder="e.g. Phone or Email">
+                    </div>
+                </div>
+                <button class="enquiry-btn" type="submit">Request Quote</button>
+            </form>
+            <div class="enquiry-summary">
+                <div class="enquiry-summary-title">Order Summary</div>
+                    <p style="color: #b71c1c; font-size: 1em; margin-top: 10px;">
+                    This summary will update automatically based on the details you enter in the enquiry form.
+                    </p>
+                </div>
+            </div>
+     </main>
 </body>
 </html>

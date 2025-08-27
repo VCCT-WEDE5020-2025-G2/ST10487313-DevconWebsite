@@ -5,25 +5,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Contact - Devcon</title>
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 0 32px;
+        }
+        .contact-title {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .contact-intro {
+            font-size: 1.15em;
+            color: #444;
+            margin-bottom: 32px;
+        }
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: flex-start;
+            margin-bottom: 36px;
+        }
+        .contact-form-box {
+            background: #e0e0e0;
+            border-radius: 8px;
+            padding: 28px 24px 24px 24px;
+            min-width: 300px;
+            max-width: 350px;
+            flex: 1;
+        }
+        .contact-form-label {
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            color: #222;
+            text-align: left;
+            display: block;
+        }
+        .contact-form-input, .contact-form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            border-radius: 18px;
+            background: #ccc;
+            font-size: 1.1em;
+            margin-bottom: 18px;
+            margin-top: 2px;
+            resize: none;
+            box-sizing: border-box;
+        }
+        .contact-form-textarea {
+            min-height: 70px;
+        }
+        .contact-form-instructions {
+            font-size: 0.98em;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        .contact-form-btn {
+            background: #c00;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 12px 0;
+            border-radius: 18px;
+            border: none;
+            font-weight: bold;
+            width: 60%;
+            margin: 0 auto;
+            display: block;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form-btn:hover {
+            background: #c00;
+        }
+        .contact-map-box {
+            background: #e0e0e0;
+            border-radius: 18px;
+            flex: 2;
+            min-width: 340px;
+            min-height: 270px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 0 24px 0;
+        }
+        .contact-map-placeholder {
+            width: 95%;
+            height: 220px;
+            background: #d3d3d3;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2em;
+            color: #222;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+        .contact-map-caption {
+            font-size: 1.05em;
+            color: #444;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .contact-info-bar {
+            background: #e0e0e0;
+            border-radius: 8px;
+            margin: 48px 0 0 0;
+            padding: 32px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 1.15em;
+            color: #222;
+        }
+        .contact-info-item {
+            flex: 1;
+            text-align: center;
+        }
+        @media (max-width: 1000px) {
+            .contact-flex {
+                flex-direction: column;
+                gap: 32px;
+            }
+            .contact-map-box {
+                min-width: 200px;
+            }
+        }
+        @media (max-width: 700px) {
+            .contact-title {
+                font-size: 2em;
+            }
+            .contact-info-bar {
+                flex-direction: column;
+                gap: 18px;
+                font-size: 1em;
+                padding: 24px 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
     <!-- Use this header for all pages -->
-<header>
-    <div class="container header-flex">
-        <div class="logo">
-    <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
-</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <h1 class="contact-title">Contact Us</h1>
+        <div class="contact-intro">
+            We’re here to help! Reach out to us with your questions or project needs.
+        </div>
+        <div class="contact-flex">
+            <form class="contact-form-box" autocomplete="off">
+                <div class="contact-form-instructions">
+                    Complete the form and our team will respond within 2 business days.
+                </div>
+                <label class="contact-form-label" for="name">Name</label>
+                <input class="contact-form-input" type="text" id="name" name="name" placeholder="Your Name">
+                <label class="contact-form-label" for="email">Email</label>
+                <input class="contact-form-input" type="email" id="email" name="email" placeholder="you@email.com">
+                <label class="contact-form-label" for="message">Message</label>
+                <textarea class="contact-form-textarea" id="message" name="message" placeholder="Type your message..."></textarea>
+                <button class="contact-form-btn" type="submit">Send</button>
+            </form>
+            <div class="contact-map-box">
+                <img src="images/map.png" alt="Map of Windhoek" class="contact-map-placeholder" style="width:95%; height:220px; object-fit:cover; border-radius:12px; margin-top:24px; margin-bottom:10px;">
+                <div class="contact-map-caption">
+                    Serving Namibia and surrounding regions.
+                </div>
+            </div>
+        </div>
+        <div class="contact-info-bar" style="background: #c00; color: #fff;">
+            <div class="contact-info-item">
+                <strong>Email:</strong><br>
+                projectconsulting@devcon.co.za
+            </div>
+            <div class="contact-info-item">
+                <strong>Phone:</strong><br>
+                +27 21 123 4567
+            </div>
+            <div class="contact-info-item">
+                <strong>Address:</strong><br>
+                Windhoek, Namibia
+            </div>
+        </div>
+    </main>
 </body>
 </html>

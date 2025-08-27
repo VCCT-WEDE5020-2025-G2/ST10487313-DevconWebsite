@@ -1,29 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>About - Devcon</title>
+    <style>
+        .about-main-container {
+            max-width: 1100px;
+            margin: 50px auto 0 auto;
+            padding: 0 24px;
+        }
+
+        .about-title {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        .about-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .about-left {
+            flex: 2;
+            min-width: 320px;
+        }
+
+        .about-right {
+            flex: 1.2;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 36px;
+        }
+
+        .about-section-title {
+            font-size: 1.5em;
+            margin: 32px 0 16px 0;
+            color: #222;
+        }
+
+        .about-placeholder-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #ddd;
+            border: 2px solid #bbb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1.2em;
+            position: relative;
+        }
+
+        .about-placeholder-img::before,
+        .about-placeholder-img::after {
+            content: "";
+            position: absolute;
+            background: #888;
+        }
+
+        .about-placeholder-img::before {
+            width: 2px;
+            height: 90%;
+            left: 50%;
+            top: 5%;
+            transform: translateX(-50%);
+        }
+
+        .about-placeholder-img::after {
+            height: 2px;
+            width: 90%;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+        }
+
+        .about-team-list {
+            margin-top: 10px;
+        }
+
+        .about-team-list li {
+            background: #f5f5f5;
+            margin-bottom: 10px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: #444;
+            font-weight: 500;
+            width: 80%;
+        }
+
+        @media (max-width: 900px) {
+            .about-flex {
+                flex-direction: column;
+            }
+
+            .about-right {
+                flex-direction: row;
+                gap: 24px;
+                align-items: stretch;
+            }
+
+            .about-placeholder-img {
+                aspect-ratio: 1.2/1;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Use this header for all pages -->
-<header>
-    <div class="container header-flex">
-        <div class="logo">
-    <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
-</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-main-container">
+        <h1 class="about-title">About Us</h1>
+        <div class="about-flex">
+            <div class="about-left">
+                <section>
+                    <h2 class="about-section-title">Company History</h2>
+                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 24px;">
+                        Founded in 2010, Devcon has grown from a small local contractor into a leading provider of
+                        construction and engineering services across the region. Our journey began with a vision to
+                        deliver quality and innovation in every project, and today, our portfolio spans residential,
+                        commercial, and industrial sectors.
+                    </div>
+                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em;">
+                        Over the years, we have built a reputation for reliability, technical expertise, and a
+                        client-first approach. Our team’s dedication has enabled us to complete hundreds of successful
+                        projects, always with a focus on sustainability and excellence.
+                    </div>
+                </section>
+                <section>
+                    <h2 class="about-section-title">Mission &amp; Vision</h2>
+                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 16px;">
+                        <strong>Mission:</strong> To deliver innovative, sustainable, and high-quality construction
+                        solutions that exceed client expectations and contribute positively to our communities.
+                    </div>
+                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em;">
+                        <strong>Vision:</strong> To be recognized as the most trusted and forward-thinking construction
+                        partner, setting new standards for excellence and environmental responsibility.
+                    </div>
+                </section>
+            </div>
+            <div class="about-right">
+                <img src="images/Team.jpg" alt="Devcon Team Photo" style="
+                 width: 100%;
+                 aspect-ratio: 1/1;
+                 object-fit: cover;
+                 border: 2px solid #bbb;
+                 border-radius: 8px;
+                 background: #ddd;
+                 display: block;
+                ">
+                <section style="width:100%;">
+                    <h2 class="about-section-title" style="margin-top:0;">Team</h2>
+                    <p
+                        style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px; color: #444; font-weight: 500;">
+                        Devcon’s dedicated team of project managers, engineers, and electricians are committed to
+                        professionalism, safety, and innovation.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
 </body>
-</html>

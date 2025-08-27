@@ -5,25 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Services - Devcon</title>
+    <style>
+        .services-container {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 0 32px;
+        }
+        .services-title {
+            font-size: 3em;
+            margin-bottom: 36px;
+            color: #222;
+        }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+            justify-content: flex-start;
+            margin-bottom: 60px;
+        }
+        .service-card {
+            background: none;
+            border: none;
+            flex: 1 1 220px;
+            max-width: 250px;
+            min-width: 180px;
+            text-align: center;
+        }
+        .service-img-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #ddd;
+            border: 2px solid #bbb;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            position: relative;
+        }
+        .service-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #111;
+        }
+        .service-desc {
+            font-size: 1em;
+            color: #444;
+            margin-bottom: 0;
+        }
+        .services-enquire-section {
+            background: #c00;
+            padding: 48px 0 56px 0;
+            margin-top: 60px;
+        }
+        .enquire-form-mock {
+            max-width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .enquire-input-mock {
+            background: #e0e0e0;
+            border-radius: 6px;
+            height: 32px;
+            margin-bottom: 0;
+            width: 100%;
+        }
+        .enquire-input-mock.short {
+            width: 70%;
+        }
+        .enquire-row {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .enquire-btn-mock {
+            background: #e0e0e0;
+            color: #111;
+            font-size: 2em;
+            border: none;
+            border-radius: 18px;
+            padding: 8px 38px;
+            font-family: inherit;
+            font-weight: 400;
+            cursor: pointer;
+            margin-left: auto;
+            transition: background 0.2s;
+        }
+        .enquire-btn-mock:hover {
+            background: #fff;
+        }
+        @media (max-width: 1000px) {
+            .services-grid {
+                gap: 24px;
+            }
+            .service-card {
+                max-width: 45vw;
+            }
+        }
+        @media (max-width: 700px) {
+            .services-title {
+                font-size: 2em;
+            }
+            .services-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service-card {
+                max-width: 90vw;
+            }
+            .enquire-row {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+            .enquire-btn-mock {
+                margin-left: 0;
+                margin-top: 12px;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Use this header for all pages -->
-<header>
-    <div class="container header-flex">
-        <div class="logo">
-    <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
-</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="images/Logo.avif" alt="Devcon Logo" style="height:40px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="services-container">
+    <h1 class="services-title">Services</h1>
+    <div class="services-grid" style="gap: 36px; justify-content: center;">
+        <div style="width: 250px; text-align: center;">
+            <img src="images/Solar.jpg" alt="Solar Installations" style="width: 250px; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #bbb; background: #ddd;">
+            <h2 style="margin: 18px 0 8px 0; font-size: 1.3em;">Solar Installations</h2>
+            <div style="background: #f5f5f5; padding: 14px 16px; border-radius: 10px; color: #444;">
+                We design, install, and maintain solar power systems that reduce costs and promote sustainability.
+            </div>
+        </div>
+        <div style="width: 250px; text-align: center;">
+            <img src="images/electrical.jpg" alt="Electrical Services" style="width: 250px; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #bbb; background: #ddd;">
+            <h2 style="margin: 18px 0 8px 0; font-size: 1.3em;">Electrical Services</h2>
+            <div style="background: #f5f5f5; padding: 14px 16px; border-radius: 10px; color: #444;">
+                We provide safe, compliant, and efficient electrical solutions for homes, businesses, and industrial operations.
+            </div>
+        </div>
+        <div style="width: 250px; text-align: center;">
+            <img src="images/projectManagement.jpg" alt="Project Management" style="width: 250px; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #bbb; background: #ddd;">
+            <h2 style="margin: 18px 0 8px 0; font-size: 1.3em;">Project Management</h2>
+            <div style="background: #f5f5f5; padding: 14px 16px; border-radius: 10px; color: #444;">
+                From planning to execution, we manage projects with precision, ensuring timely delivery and budget control.
+            </div>
+        </div>
+        <div style="width: 250px; text-align: center;">
+            <img src="images/Contract.jpg" alt="Consulting" style="width: 250px; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #bbb; background: #ddd;">
+            <h2 style="margin: 18px 0 8px 0; font-size: 1.3em;">Consulting</h2>
+            <div style="background: #f5f5f5; padding: 14px 16px; border-radius: 10px; color: #444;">
+                We provide professional advice and planning for construction and engineering projects.
+            </div>
+        </div>
     </div>
-</header>
-</body>
-</html>
+</main>
+    
+    <footer style="background: #c00; padding: 40px 0 48px 0; margin-top: 60px;">
+        <div style="text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 18px; color: #fff;">
+                Interested in a service? Click Enquire below to request a custom quote.
+            </p>
+            <a href="enquiry.html" style="
+                display: inline-block;
+                background: #fff;
+                color: #c00;
+                font-size: 1.5em;
+                padding: 18px 60px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 1px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                transition: background 0.2s, color 0.2s;
+                margin-top: 10px;
+            ">
+                Enquire
+            </a>
+        </div>
+    </footer>
+
+    
