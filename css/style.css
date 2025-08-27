@@ -1,0 +1,90 @@
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    margin-left: 30px; /* Move logo to the right */
+}
+
+.logo img {
+    height: 80px; /* Enlarge logo by 5px */
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 0 2px #fff); /* Optional: subtle white glow for visibility */
+}
+
+nav {
+    margin-right: 30px; /* Move nav items to the left */
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+     color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+header {
+    background-color: #c00; /* Replace with your logo's red if different */
+}
+
+.hero-banner {
+    background: url('../images/banner.png') center center/cover no-repeat;
+    min-height: 300px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    text-align: center;
+    margin: 0;
+}
+
+.about-preview {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.about-preview h1 {
+    margin-bottom: 32px;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.about-images {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.about-images img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    background: #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.about-preview p {
+    text-align: center;
+    padding: 0 40px;
+    max-width: 800px;
+    margin: 0 auto 32px auto;
+    font-size: 1.1rem;
+}
