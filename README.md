@@ -46,4 +46,5 @@ This submission includes the project overview, goals and objectives, proposed fe
 ## References 
 Figma. (2025) Figma: The collaborative interface design tool. Available at: https://www.figma.com
  (Accessed: 27 August 2025).
+ 
  Varsity College. (2025) WEDE5020MM Module Manual. Cape Town: Varsity College.
