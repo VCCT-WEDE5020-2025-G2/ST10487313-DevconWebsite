@@ -48,3 +48,9 @@ Figma. (2025) Figma: The collaborative interface design tool. Available at: http
  (Accessed: 27 August 2025).
  
  Varsity College. (2025) WEDE5020MM Module Manual. Cape Town: Varsity College (Accessed: 27 August 2025).
+
+ Unsplash. (2025) Free stock photos and images under the Unsplash License. Available at: https://unsplash.com
+ (Accessed: 29 September 2025).
+
+Shutterstock. (2025) Royalty-free images, photos, and vectors. Available at: https://www.shutterstock.com
+ (Accessed: 29 September 2025). Licensed under Shutterstock Royalty-Free License.
