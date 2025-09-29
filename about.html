@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>About - Devcon</title>
     <style>
+        /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
         .about-main-container {
             max-width: 1100px;
             margin: 50px auto 0 auto;
@@ -45,42 +46,6 @@
             color: #222;
         }
 
-        .about-placeholder-img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background: #ddd;
-            border: 2px solid #bbb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 1.2em;
-            position: relative;
-        }
-
-        .about-placeholder-img::before,
-        .about-placeholder-img::after {
-            content: "";
-            position: absolute;
-            background: #888;
-        }
-
-        .about-placeholder-img::before {
-            width: 2px;
-            height: 90%;
-            left: 50%;
-            top: 5%;
-            transform: translateX(-50%);
-        }
-
-        .about-placeholder-img::after {
-            height: 2px;
-            width: 90%;
-            top: 50%;
-            left: 5%;
-            transform: translateY(-50%);
-        }
-
         .about-team-list {
             margin-top: 10px;
         }
@@ -94,7 +59,7 @@
             font-weight: 500;
             width: 80%;
         }
-
+        /* Responsive adjustments for smaller screens */
         @media (max-width: 900px) {
             .about-flex {
                 flex-direction: column;
@@ -114,7 +79,7 @@
 </head>
 
 <body>
-    <!-- header for all pages! -->
+    <!-- header for all pages! Contains the logo and navigation menu -->
     <header>
         <div class="container header-flex">
             <div class="logo">
@@ -122,6 +87,7 @@
             </div>
             <nav>
                 <ul>
+                    <!-- Main navigation links for the website -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -135,16 +101,18 @@
     <main class="about-main-container">
         <h1 class="about-title">About Us</h1>
         <div class="about-flex">
-
+         <!-- LEFT COLUMN: Company History & Mission/Vision -->
             <div class="about-left">
                 <section>
                     <h2 class="about-section-title">Company History</h2>
+                    <!-- Brief company history -->
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 24px;">
                         Founded in 2010, Devcon has grown from a small local contractor into a leading provider of
                         construction and engineering services across the region. Our journey began with a vision to
                         deliver quality and innovation in every project, and today, our portfolio spans residential,
                         commercial, and industrial sectors.
                     </div>
+                    <!-- Additional history/values -->
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em;">
                         Over the years, we have built a reputation for reliability, technical expertise, and a
                         client-first approach. Our team’s dedication has enabled us to complete hundreds of successful
@@ -153,17 +121,19 @@
                 </section>
                 <section>
                     <h2 class="about-section-title">Mission &amp; Vision</h2>
+                    <!-- Mission statement -->
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 16px;">
                         <strong>Mission:</strong> To deliver innovative, sustainable, and high-quality construction
                         solutions that exceed client expectations and contribute positively to our communities.
                     </div>
+                    <!-- Vision statement -->
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em;">
                         <strong>Vision:</strong> To be recognized as the most trusted and forward-thinking construction
                         partner, setting new standards for excellence and environmental responsibility.
                     </div>
                 </section>
             </div>
-
+            <!-- RIGHT COLUMN: Team Photo & Team Description -->
             <div class="about-right">
                 <img src="images/Team.jpg" alt="Devcon Team Photo" style="
                  width: 100%;

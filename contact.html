@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Contact - Devcon</title>
     <style>
+        /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
         .contact-container {
             max-width: 1200px;
             margin: 40px auto 0 auto;
@@ -150,7 +151,7 @@
     </style>
 </head>
 <body>
-    <!-- header for all pages! -->
+    <!-- header for all pages! Contains the logo and navigation menu -->
     <header>
         <div class="container header-flex">
             <div class="logo">
@@ -158,6 +159,7 @@
             </div>
             <nav>
                 <ul>
+                    <!-- Main navigation links for the website -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -169,11 +171,13 @@
     </header>
 
     <main class="contact-container">
+        <!-- Main heading and a short intro for the contact page -->
         <h1 class="contact-title">Contact Us</h1>
         <div class="contact-intro">
             We’re here to help! Reach out to us with your questions or project needs.
         </div>
         <div class="contact-flex">
+            <!-- Users can send a message to the company here -->
             <form class="contact-form-box" autocomplete="off">
                 <div class="contact-form-instructions">
                     Complete the form and our team will respond within 2 business days.
@@ -186,6 +190,7 @@
                 <textarea class="contact-form-textarea" id="message" name="message" placeholder="Type your message..."></textarea>
                 <button class="contact-form-btn" type="submit">Send</button>
             </form>
+            <!-- Shows a map image and a caption about the service area -->
             <div class="contact-map-box">
                 <img src="images/map.png" alt="Map of Windhoek" class="contact-map-placeholder" style="width:95%; height:220px; object-fit:cover; border-radius:12px; margin-top:24px; margin-bottom:10px;">
                 <div class="contact-map-caption">
@@ -193,7 +198,7 @@
                 </div>
             </div>
         </div>
-        
+        <!-- Displays company email, phone, and address in a red bar at the bottom -->
         <div class="contact-info-bar" style="background: #c00; color: #fff;">
             <div class="contact-info-item">
                 <strong>Email:</strong><br>

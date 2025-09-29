@@ -6,6 +6,7 @@
     <title>Enquiry - Devcon</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
         .enquiry-container {
             max-width: 1200px;
             margin: 40px auto 0 auto;
@@ -32,11 +33,11 @@
             min-width: 320px;
             display: flex;
             flex-direction: column;
-            gap: 24px; /* Increased gap for more space between fields */
+            gap: 24px; 
         }
         .enquiry-row {
             display: flex;
-            gap: 24px; /* Increased gap for more space between columns */
+            gap: 24px;
         }
         .enquiry-input, .enquiry-textarea, .enquiry-select {
             width: 100%;
@@ -100,7 +101,7 @@
     </style>
 </head>
 <body>
-    <!-- header for all pages! -->
+    <!-- header for all pages! Contains the logo and navigation menu -->
     <header>
         <div class="container header-flex">
             <div class="logo">
@@ -108,6 +109,7 @@
             </div>
             <nav>
                 <ul>
+                    <!-- Main navigation links for the website -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -119,12 +121,16 @@
     </header>
 
     <main class="enquiry-container">
+        <!-- Breadcrumb navigation for user orientation -->
         <div class="enquiry-breadcrumb">Services / Enquiry</div>
+        <!-- Main heading for the enquiry page -->
         <h1 class="enquiry-title">Enquiry</h1>
+        <!-- Brief instructions for the user -->
         <p style="font-size: 1.15em; color: #444; margin-bottom: 28px;">
             Please complete the enquiry form below to request a tailored quote for your chosen service.
         </p>
         <div class="enquiry-flex">
+            <!-- ENQUIRY FORM SECTION: Users fill out this form to request a quote -->
             <form class="enquiry-form" autocomplete="off">
                 <div class="enquiry-row">
                     <div style="flex:1;">
@@ -167,6 +173,7 @@
                     <button class="enquiry-btn" type="submit" style="margin: 20px; width: 200px; max-width: 100%;">Request Quote</button>
                 </div>
             </form>
+            <!-- ORDER SUMMARY SECTION: This box will update as the user fills out the form -->
             <div class="enquiry-summary">
                 <div class="enquiry-summary-title">Order Summary</div>
                     <p style="color: #b71c1c; font-size: 1em; margin-top: 10px;">
