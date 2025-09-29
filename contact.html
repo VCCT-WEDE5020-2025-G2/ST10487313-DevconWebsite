@@ -114,27 +114,46 @@
             text-align: center;
         }
         .contact-info-bar {
-            background: #e0e0e0;
-            border-radius: 8px;
-            margin: 48px 0 0 0;
-            padding: 32px 0;
+            width: 100vw !important;
+            left: 50%;
+            right: 0;
+            margin-left: -50vw;
+            border-radius: 0 !important;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 100vw !important;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            font-size: 1.15em;
-            color: #222;
+            gap: 0;
+            padding: 32px 0;
+        }
+        @media (max-width: 700px) {
+            .contact-info-bar {
+                flex-direction: column;
+                gap: 18px;
+                font-size: 1em;
+                padding: 32px 0;
+            }
         }
         .contact-info-item {
             flex: 1;
             text-align: center;
         }
-        @media (max-width: 1000px) {
-            .contact-flex {
-                flex-direction: column;
-                gap: 32px;
+        @media (min-width: 1000px) {
+            .contact-container {
+                max-width: 1600px;
+                padding: 0 60px;
             }
+            .contact-flex {
+                gap: 80px;
+                justify-content: center;
+            }
+            .contact-form-box,
             .contact-map-box {
-                min-width: 200px;
+                max-width: 600px;
+                min-width: 400px;
+                width: 100%;
             }
         }
         @media (max-width: 700px) {
