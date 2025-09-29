@@ -4,9 +4,9 @@
 Devcon Company Website  
 
 ## Student Information  
-- **Name:** [Your Full Name]  
-- **Student Number:** [Your Student Number]  
-- **Course:** WEDEMM  
+- **Name:** Marcus Fourie  
+- **Student Number:** ST10487313  
+- **Course:** WEDE5020
 - **Institution:** Varsity College  
 
 ## Project Overview  
@@ -38,12 +38,6 @@ The website includes:
 - **Shutterstock**: Banner image licensed under the Shutterstock Royalty-Free License.  
 - **Figma**: Used for wireframes and interface design mockups.  
 - **Google Fonts**: Used under the SIL Open Font License.  
-
-## Timeline and Milestones  
-- **Week 1:** Research, content gathering, and wireframes.  
-- **Week 2:** Base design created with HTML/CSS, content integrated.  
-- **Week 3:** Enquiry form, responsiveness, and interactivity.  
-- **Week 4:** Testing, breakpoints adjustments, and final deployment.  
 
 ## Breakpoints Testing  
 Screenshots demonstrate responsive design tested on smaller breakpoints (e.g., iPad/tablet screens). Layout and styling remain intact without major distortions.  
