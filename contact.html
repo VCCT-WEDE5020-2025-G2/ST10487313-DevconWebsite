@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Contact - Devcon</title>
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
     <style>
         /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
         .contact-container {
@@ -90,9 +95,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Changed from center */
             position: relative;
-            padding: 0 0 24px 0;
+            padding: 24px 0 24px 0; /* Added top padding */
+        }
+        #map {
+            width: 95%;
+            height: 220px;
+            border-radius: 12px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            background: #ddd; /* Fallback background */
         }
         .contact-map-placeholder {
             width: 95%;
@@ -209,9 +222,9 @@
                 <textarea class="contact-form-textarea" id="message" name="message" placeholder="Type your message..."></textarea>
                 <button class="contact-form-btn" type="submit">Send</button>
             </form>
-            <!-- Shows a map image and a caption about the service area -->
+            <!-- Shows a interactive map -->
             <div class="contact-map-box">
-                <img src="images/map.png" alt="Map of Windhoek" class="contact-map-placeholder" style="width:95%; height:220px; object-fit:cover; border-radius:12px; margin-top:24px; margin-bottom:10px;">
+                <div id="map"></div>
                 <div class="contact-map-caption">
                     Serving Namibia and surrounding regions.
                 </div>
@@ -233,5 +246,46 @@
             </div>
         </div>
     </main>
-</body>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <script>
+    // Initialize the map centered on Windhoek, Namibia
+    var map = L.map('map').setView([-22.5609, 17.0658], 11);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker for Devcon's location
+    var marker = L.marker([-22.5609, 17.0658]).addTo(map);
+
+    // Add a popup to the marker
+    marker.bindPopup('<b>Devcon</b><br>Windhoek, Namibia<br>Construction & Engineering Services').openPopup();
+
+    // Optional: Add a circle to show service area
+    var circle = L.circle([-22.5609, 17.0658], {
+        color: '#c00',
+        fillColor: '#c00',
+        fillOpacity: 0.1,
+        radius: 50000 // 50km radius
+    }).addTo(map);
+
+    // Disable scroll wheel zoom (optional, for better UX)
+    map.scrollWheelZoom.disable();
+
+    // Enable zoom on click
+    map.on('click', function() {
+        map.scrollWheelZoom.enable();
+    });
+
+    map.on('mouseout', function() {
+        map.scrollWheelZoom.disable();
+    });
+    </script>
+    </body>
 </html>
