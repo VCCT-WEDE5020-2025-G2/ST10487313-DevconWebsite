@@ -114,7 +114,30 @@ main, .main-content, .about-preview {
 /* Footer stays at the bottom */
 footer {
     flex-shrink: 0;
+
 }
+
+/* Active state for navigation links when clicked */
+nav ul li a:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000000;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Optional: Also add a focus state for accessibility */
+nav ul li a:focus {
+    outline: 2px solid #000000;
+    outline-offset: 6px;
+    border-radius: 12px; 
+}
+
+/* Active/current page styling */
+nav ul li a.active {
+    color: #000000 !important;
+    font-weight: bold;
+}
+
 @media (max-width: 700px) {
     /* Navigation: stack links vertically */
     nav ul {
