@@ -188,29 +188,68 @@
     </div>
 </main>
     <!-- Red call-to-action footer with enquiry prompt and button -->
-    <footer style="background: #c00; padding: 40px 0 48px 0; margin-top: 60px;">
-        <div style="text-align: center;">
-            <p style="font-size: 1.2em; margin-bottom: 18px; color: #fff;">
-                Interested in a service? Click Enquire below to request a custom quote.
-            </p>
-            <a href="enquiry.html" style="
-                display: inline-block;
-                background: #fff;
-                color: #c00;
-                font-size: 1.5em;
-                padding: 18px 60px;
-                border-radius: 10px;
-                text-decoration: none;
-                font-weight: bold;
-                letter-spacing: 1px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                transition: background 0.2s, color 0.2s;
-                margin-top: 10px;
-            ">
-                Enquire
-            </a>
-        </div>
-    </footer>
+    <div style="text-align: center; margin: 60px 0 40px 0;">
+    <button id="openModalBtn" style="
+        background: #c00;
+        color: #fff;
+        font-size: 1.5em;
+        padding: 18px 60px;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: background 0.2s;
+    ">
+        Enquire Now
+    </button>
+</div>
+<!-- Modal Structure -->
+<div id="enquireModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 style="color: #c00; margin-bottom: 20px;">Request a Custom Quote</h2>
+        <p style="margin-bottom: 20px;">Interested in a service? Fill out the form below and we'll get back to you.</p>
+        <a href="enquiry.html" style="
+            display: inline-block;
+            background: #c00;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        ">
+            Go to Enquiry Form
+        </a>
+    </div>
+</div>
+
+<script>
+// Get modal elements
+const modal = document.getElementById("enquireModal");
+const btn = document.getElementById("openModalBtn");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+// Open modal when button is clicked
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// Close modal when X is clicked
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 </body>
 <!-- All the footers are now outside the body tag -->
 <footer style="background: #d32f2f; color: #fff; padding: 18px 0; font-size: 1em;">
