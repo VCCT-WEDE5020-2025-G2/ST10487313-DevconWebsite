@@ -132,53 +132,88 @@
     </header>
 
     <main class="about-main-container">
-        <h1 class="about-title">About Us</h1>
-        <div class="about-flex">
-         <!-- LEFT COLUMN: Company History & Mission/Vision -->
-            <div class="about-left">
-                <section>
-                    <h2 class="about-section-title">Company History</h2>
-                    <!-- Brief company history -->
+    <h1 class="about-title">About Us</h1>
+    <div class="about-flex">
+        <!-- LEFT COLUMN: Company History & Mission/Vision -->
+        <div class="about-left">
+            <!-- Company History Accordion -->
+            <section>
+                <h2 class="about-section-title accordion-header" onclick="toggleAccordion('history')">
+                    Company History
+                </h2>
+                <div id="history" class="accordion-content">
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 24px;">
                         Founded in 2010, Devcon has grown from a small local contractor into a leading provider of
                         construction and engineering services across the region. Our journey began with a vision to
                         deliver quality and innovation in every project, and today, our portfolio spans residential,
                         commercial, and industrial sectors.
                     </div>
-                    <!-- Additional history/values -->
-                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em;">
+                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 24px;">
                         Over the years, we have built a reputation for reliability, technical expertise, and a
-                        client-first approach. Our team’s dedication has enabled us to complete hundreds of successful
+                        client-first approach. Our team's dedication has enabled us to complete hundreds of successful
                         projects, always with a focus on sustainability and excellence.
                     </div>
-                </section>
-                <section>
-                    <h2 class="about-section-title">Mission &amp; Vision</h2>
-                    <!-- Mission statement -->
+                </div>
+            </section>
+            
+            <!-- Mission & Vision Accordion -->
+            <section>
+                <h2 class="about-section-title accordion-header" onclick="toggleAccordion('mission')">
+                    Mission &amp; Vision
+                </h2>
+                <div id="mission" class="accordion-content">
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 16px;">
                         <strong>Mission:</strong> To deliver innovative, sustainable, and high-quality construction
                         solutions that exceed client expectations and contribute positively to our communities.
                     </div>
-                    <!-- Vision statement with extra margin at the bottom for spacing above the footer -->
                     <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 40px;">
                         <strong>Vision:</strong> To be recognized as the most trusted and forward-thinking construction
                         partner, setting new standards for excellence and environmental responsibility.
                     </div>
-                </section>
-            </div>
-            <!-- RIGHT COLUMN: Team Photo & Team Description box-shadow: 0 2px 8px rgba(0,0,0,0.35);-->
-            <div class="about-right">
-    <img src="images/Team.jpg" alt="Devcon Team Photo" class="about-team-img">
-    <section class="about-team-section">
-        <h2 class="about-section-title" style="margin-top:0;">Team</h2>
-        <p style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px; color: #444; font-weight: 500;">
-            Devcon’s dedicated team of project managers, engineers, and electricians are committed to
-            professionalism, safety, and innovation.
-        </p>
-    </section>
-</div>
+                </div>
+            </section>
         </div>
-    </main>
+        
+        <!-- RIGHT COLUMN: Team Accordion -->
+        <div class="about-right">
+            <img src="images/Team.jpg" alt="Devcon Team Photo" class="about-team-img">
+            <section class="about-team-section">
+                <h2 class="about-section-title accordion-header" onclick="toggleAccordion('team')" style="margin-top:0;">
+                    Team
+                </h2>
+                <div id="team" class="accordion-content">
+                    <p style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px; color: #444; font-weight: 500;">
+                        Devcon's dedicated team of project managers, engineers, and electricians are committed to
+                        professionalism, safety, and innovation.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script>
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const header = content.previousElementSibling;
+    
+    // Toggle the content
+    content.classList.toggle('active');
+    header.classList.toggle('active');
+    
+    allContents.forEach((item, index) => {
+        if (item.id !== id && item.classList.contains('active')) {
+            item.classList.remove('active');
+            allHeaders[index].classList.remove('active');
+        }
+    });
+}
+
+// Optional: Open the first accordion by default
+document.addEventListener('DOMContentLoaded', function() {
+    toggleAccordion('history');
+});
+</script>
     
 </body>
 <!-- All footers are now outside the body tag -->
