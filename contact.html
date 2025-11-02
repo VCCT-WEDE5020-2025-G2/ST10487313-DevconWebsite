@@ -89,17 +89,7 @@
             background: #c00;
         }
         .contact-map-box {
-            background: #e0e0e0;
-            border-radius: 18px;
-            flex: 2;
-            min-width: 340px;
-            min-height: 270px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Changed from center */
-            position: relative;
-            padding: 24px 0 24px 0; /* Added top padding */
+            display: none;
         }
         #map {
             width: 95%;
@@ -123,38 +113,12 @@
             margin-bottom: 10px;
         }
         .contact-map-caption {
-            font-size: 1.05em;
-            color: #444;
+            font-size: 0.95em;
+            color: #666;
+            text-align: center;
             margin-top: 10px;
-            text-align: center;
         }
-        .contact-info-bar {
-            width: 100vw !important;
-            left: 50%;
-            right: 0;
-            margin-left: -50vw;
-            border-radius: 0 !important;
-            box-sizing: border-box;
-            position: relative;
-            max-width: 100vw !important;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 0;
-            padding: 32px 0;
-        }
-        @media (max-width: 700px) {
-            .contact-info-bar {
-                flex-direction: column;
-                gap: 18px;
-                font-size: 1em;
-                padding: 32px 0;
-            }
-        }
-        .contact-info-item {
-            flex: 1;
-            text-align: center;
-        }
+        
         @media (min-width: 1000px) {
             .contact-container {
                 max-width: 1600px;
@@ -182,6 +146,23 @@
                 padding: 24px 0;
             }
         }
+
+        /* Map styling within info card */
+        .map-card {
+            padding: 20px;
+        }
+        
+        .map-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .map-card #map {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            margin: 15px 0;
+            background: #ddd;
+        }
     </style>
 </head>
 <body>
@@ -204,50 +185,165 @@
         </div>
     </header>
 
-    <main class="contact-container">
-        <!-- Main heading and a short intro for the contact page -->
-        <h1 class="contact-title">Contact Us</h1>
-        <div class="contact-intro">
-            We’re here to help! Reach out to us with your questions or project needs.
+    <main>
+    <div class="contact-page-container">
+      <div class="contact-header">
+        <h1>Contact Us</h1>
+        <p>We're here to help! Reach out to us with your questions or project needs.</p>
+      </div>
+
+      <div class="contact-content">
+        <!-- CONTACT FORM SECTION -->
+        <div class="contact-form-section">
+          <div class="form-intro">
+            <h2>Send Us a Message</h2>
+            <p>Complete the form and our team will respond within 2 business days.</p>
+          </div>
+
+          <form 
+            id="contactForm" 
+            action="https://formsubmit.co/d408b3808043ed816763f89464ffbaf7" 
+            method="POST">
+            
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Contact Message from Devcon Website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <!-- Name -->
+            <div class="form-group">
+              <label for="name">Name <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Your Name" 
+                required
+                minlength="2"
+                maxlength="50"
+                pattern="[A-Za-z\s]+"
+                title="Please enter a valid name (letters and spaces only)">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="you@email.com" 
+                required
+                title="Please enter a valid email address">
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+              <label for="phone">Phone Number (Optional)</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="+27 12 345 6789"
+                pattern="[\+]?[0-9]{10,13}"
+                title="Please enter a valid phone number (10-13 digits)">
+            </div>
+
+            <!-- Message Type -->
+            <div class="form-group">
+              <label for="messageType">Message Type <span class="required">*</span></label>
+              <select id="messageType" name="messageType" required>
+                <option value="">Select message type...</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Project Quote">Project Quote Request</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Billing Question">Billing Question</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea 
+                id="message" 
+                name="message" 
+                placeholder="Type your message..." 
+                required
+                minlength="10"
+                maxlength="1000"
+                rows="6"></textarea>
+              <small class="char-count">0 / 1000 characters</small>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
         </div>
-        <div class="contact-flex">
-            <!-- Users can send a message to the company here -->
-            <form class="contact-form-box" autocomplete="off">
-                <div class="contact-form-instructions">
-                    Complete the form and our team will respond within 2 business days.
-                </div>
-                <label class="contact-form-label" for="name">Name</label>
-                <input class="contact-form-input" type="text" id="name" name="name" placeholder="Your Name">
-                <label class="contact-form-label" for="email">Email</label>
-                <input class="contact-form-input" type="email" id="email" name="email" placeholder="you@email.com">
-                <label class="contact-form-label" for="message">Message</label>
-                <textarea class="contact-form-textarea" id="message" name="message" placeholder="Type your message..."></textarea>
-                <button class="contact-form-btn" type="submit">Send</button>
-            </form>
-            <!-- Shows a interactive map -->
-            <div class="contact-map-box">
-                <div id="map"></div>
-                <div class="contact-map-caption">
-                    Serving Namibia and surrounding regions.
-                </div>
+
+        <!-- RIGHT SIDE: RESPONSE TIME + MAP SECTION -->
+        <div class="contact-info-section">
+          <!-- Response Time Card -->
+          <div class="info-card">
+            <h3>Response Time</h3>
+            <p>We typically respond to all inquiries within <strong>2 business days</strong>. For urgent matters, please call us directly.</p>
+          </div>
+
+          <!-- Map Card -->
+          <div class="info-card map-card">
+            <h3>Our Service Area</h3>
+            <div id="map"></div>
+            <p class="contact-map-caption">
+              Serving Windhoek, Namibia and surrounding regions.
+            </p>
+          </div>
+
+          <!-- Contact Information Card -->
+          <div class="info-card">
+            <h3>Contact Information</h3>
+            
+            <div class="info-item">
+              <span class="icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <p>projectconsulting@devcon.co.za</p>
+              </div>
             </div>
+
+            <div class="info-item">
+              <span class="icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+27 21 123 4567</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>Windhoek, Namibia</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="icon">⏰</span>
+              <div>
+                <strong>Business Hours</strong>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Displays company email, phone, and address in a red bar at the bottom -->
-        <div class="contact-info-bar" style="background: #c00; color: #fff;">
-            <div class="contact-info-item">
-                <strong>Email:</strong><br>
-                projectconsulting@devcon.co.za
-            </div>
-            <div class="contact-info-item">
-                <strong>Phone:</strong><br>
-                +27 21 123 4567
-            </div>
-            <div class="contact-info-item">
-                <strong>Address:</strong><br>
-                Windhoek, Namibia
-            </div>
+      </div>
         </div>
+    </div>
     </main>
+
+    <script src="js/contact.js"></script>
 
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -289,5 +385,15 @@
         map.scrollWheelZoom.disable();
     });
     </script>
+
+    <!-- Consistent Footer -->
+    <footer style="background: #d32f2f; color: #fff; padding: 18px 0; font-size: 1em;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+            <span style="margin-left:16px;">projectconsulting@devcon.co.za</span>
+            <span style="text-align:center; flex:1;">&copy; 2025 Devcon. All rights reserved.</span>
+            <span style="margin-right:16px;">+27 21 123 4567</span>
+        </div>
+    </footer>
+
     </body>
 </html>
