@@ -122,68 +122,138 @@
         </div>
     </header>
 
-    <main class="enquiry-container">
-        <!-- Breadcrumb navigation for user orientation -->
-        <div class="enquiry-breadcrumb">Services / Enquiry</div>
-        <!-- Main heading for the enquiry page -->
-        <h1 class="enquiry-title">Enquiry</h1>
-        <!-- Brief instructions for the user -->
-        <p style="font-size: 1.15em; color: #444; margin-bottom: 28px;">
-            Please complete the enquiry form below to request a tailored quote for your chosen service.
-        </p>
-        <div class="enquiry-flex">
-            <!-- ENQUIRY FORM SECTION: Users fill out this form to request a quote -->
-            <form class="enquiry-form" autocomplete="off">
-                <div class="enquiry-row">
-                    <div style="flex:1;">
-                        <label class="enquiry-label" for="service">Service</label>
-                        <input class="enquiry-input" type="text" id="service" name="service" placeholder="e.g. Solar Installations">
-                    </div>
-                    <div style="flex:1;">
-                        <label class="enquiry-label" for="timeline">Timeline</label>
-                        <input class="enquiry-input" type="text" id="timeline" name="timeline" placeholder="e.g. 3 months">
-                    </div>
-                </div>
+    <main>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+    <h1>Enquiry</h1>
+    <p class="subtitle">Please complete the enquiry form below to request a tailored quote for your chosen service.</p>
+    
+        <div class="enquiry-container">
+      <!-- FORM SECTION -->
+      <div>
+        <form 
+          id="enquiryForm" 
+          action="https://formsubmit.co/projectconsulting@devcon.co.za" 
+          method="POST">
+          
+          <!-- Hidden fields -->
+          <input type="hidden" name="_subject" value="New Enquiry from Devcon Website">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <!-- Service -->
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="Solar Installations" data-base-cost="50000">Solar Installations</option>
+              <option value="Electrical Services" data-base-cost="15000">Electrical Services</option>
+              <option value="Project Management" data-base-cost="30000">Project Management</option>
+              <option value="Consulting" data-base-cost="10000">Consulting</option>
+            </select>
+          </div>
 
-                <div class="enquiry-row">
-                    <div style="flex:1;">
-                        <label class="enquiry-label" for="name">Name</label>
-                        <input class="enquiry-input" type="text" id="name" name="name" placeholder="Your Name">
-                    </div>
-                    <div style="flex:1;">
-                        <label class="enquiry-label" for="email">Email</label>
-                        <input class="enquiry-input" type="email" id="email" name="email" placeholder="you@email.com">
-                    </div>
-                </div>
+          <!-- Timeline -->
+          <div class="form-group">
+            <label for="timeline">Timeline</label>
+            <select id="timeline" name="timeline" required>
+              <option value="">Select timeline...</option>
+              <option value="Urgent (1 month)" data-multiplier="1.3">Urgent (1 month)</option>
+              <option value="Standard (3 months)" data-multiplier="1.0">Standard (3 months)</option>
+              <option value="Flexible (6+ months)" data-multiplier="0.9">Flexible (6+ months)</option>
+            </select>
+          </div>
 
-                <div>
-                    <label class="enquiry-label" for="details">Project Details</label>
-                    <textarea class="enquiry-textarea" id="details" name="details" placeholder="Describe your project..."></textarea>
-                </div>
-                <div class="enquiry-row">
-                    <div style="flex:1;">
-                        <label class="enquiry-label" for="budget">Budget (R)</label>
-                        <input class="enquiry-input" type="number" id="budget" name="budget" placeholder="e.g. 50000">
-                    </div>
-                    <div style="flex:1;">
-                        <label class="enquiry-label" for="contact">Contact Method</label>
-                        <input class="enquiry-input" type="text" id="contact" name="contact" placeholder="e.g. Phone or Email">
-                    </div>
-                </div>
-                
-                <div style="width: 100%; display: flex; justify-content: right; margin-top: 20px;">
-                    <button class="enquiry-btn" type="submit" style="margin: 20px; width: 200px; max-width: 100%;">Request Quote</button>
-                </div>
-            </form>
-            <!-- ORDER SUMMARY SECTION: This box will update as the user fills out the form -->
-            <div class="enquiry-summary">
-                <div class="enquiry-summary-title">Order Summary</div>
-                    <p style="color: #b71c1c; font-size: 1em; margin-top: 10px;">
-                    This summary will update automatically based on the details you enter in the enquiry form.
-                    </p>
-                </div>
-            </div>
-     </main>
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              placeholder="Your Name" 
+              required
+              minlength="2"
+              maxlength="50"
+              pattern="[A-Za-z\s]+"
+              title="Please enter a valid name">
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="you@email.com" 
+              required>
+          </div>
+
+          <!-- Project Details -->
+          <div class="form-group">
+            <label for="projectDetails">Project Details</label>
+            <textarea 
+              id="projectDetails" 
+              name="projectDetails" 
+              placeholder="Describe your project..." 
+              required
+              minlength="20"
+              maxlength="500"></textarea>
+          </div>
+
+          <!-- Budget -->
+          <div class="form-group">
+            <label for="budget">Budget (R)</label>
+            <input 
+              type="number" 
+              id="budget" 
+              name="budget" 
+              placeholder="e.g. 50000" 
+              required
+              min="5000"
+              max="10000000"
+              step="1000">
+          </div>
+
+          <!-- Contact Method -->
+          <div class="form-group">
+            <label for="contactMethod">Contact Method</label>
+            <select id="contactMethod" name="contactMethod" required>
+              <option value="">Select preference...</option>
+              <option value="Email">Email</option>
+              <option value="Phone">Phone</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
+
+          <!-- Phone (conditional) -->
+          <div class="form-group" id="phoneGroup" style="display: none;">
+            <label for="phone">Phone Number</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              placeholder="+27 12 345 6789"
+              pattern="[\+]?[0-9]{10,13}">
+          </div>
+
+          <button type="submit" class="btn-submit">Request Quote</button>
+        </form>
+      </div>
+
+      <!-- ORDER SUMMARY SECTION -->
+      <div>
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div id="summaryContent">
+            <p class="placeholder">Please select a service and timeline to see your quote estimate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/enquiry.js"></script>
 </body>
 
 <!-- All the footers are now outside the body tag -->

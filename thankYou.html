@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Devcon</title>
+  <meta name="description" content="Thank you for contacting Devcon. We'll respond to your enquiry within 2 business days.">
+  
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Additional styles for thank you page */
+    .thank-you-container {
+      text-align: center;
+      padding: 4rem 2rem;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .thank-you-content {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .checkmark {
+      font-size: 5rem;
+      color: #51cf66;
+      margin-bottom: 1rem;
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    .thank-you-content h1 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    
+    .thank-you-content p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .thank-you-content .highlight {
+      color: #c41e3a;
+      font-weight: 600;
+    }
+    
+    .btn-home {
+      display: inline-block;
+      background-color: #c41e3a;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-home:hover {
+      background-color: #a01828;
+    }
+    
+    .contact-info {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #eee;
+    }
+    
+    .contact-info p {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="images/Logo.avif" alt="Devcon Construction and Engineering Services Logo" style="height:40px;">
+            </div>
+            <nav>
+                <ul>
+                    <!-- Main navigation links for the website -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- Thank You Content -->
+  <main class="thank-you-container">
+    <div class="thank-you-content">
+      <div class="checkmark">✓</div>
+      <h1>Thank You!</h1>
+      <p>Your enquiry has been successfully submitted.</p>
+      <p>
+        Our team will review your request and contact you within 
+        <span class="highlight">2 business days</span> with a detailed quote.
+      </p>
+      
+      <a href="index.html" class="btn-home">Return to Home</a>
+      
+      <div class="contact-info">
+        <p><strong>Need immediate assistance?</strong></p>
+        <p>Email: projectconsulting@devcon.co.za</p>
+        <p>Phone: +27 21 123 4567</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #c41e3a; color: white; padding: 2rem; text-align: center; margin-top: auto;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+      <p>projectconsulting@devcon.co.za</p>
+      <p>© 2025 Devcon. All rights reserved.</p>
+      <p>+27 21 123 4567</p>
+    </div>
+  </footer>
+
+</body>
+</html>

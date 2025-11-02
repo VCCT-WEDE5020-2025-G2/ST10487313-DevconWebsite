@@ -200,6 +200,250 @@ nav ul li a.active {
     max-height: 500px; /* Adjust based on your content */
 }
 
+/* Form Container */
+.enquiry-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Single column on mobile */
+@media (max-width: 768px) {
+  .enquiry-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Form Styling */
+#enquiryForm {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Input Styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #c41e3a;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+/* Textarea specific */
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* HTML5 Validation Styling */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group select:invalid,
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #ff6b6b;
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: #51cf66;
+}
+
+/* Error Styling */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #ff6b6b;
+  background-color: #fff5f5;
+}
+
+.form-group input.success,
+.form-group select.success,
+.form-group textarea.success {
+  border-color: #51cf66;
+  background-color: #f0fdf4;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.error-message::before {
+  content: "⚠";
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: #c41e3a;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #a01828;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+}
+
+.btn-submit:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Order Summary Styling */
+.order-summary {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 10px;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.order-summary h2 {
+  color: #c41e3a;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.placeholder {
+  color: #c41e3a;
+  font-style: italic;
+  padding: 1rem;
+}
+
+.summary-details {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.summary-details h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #c41e3a;
+  padding-bottom: 0.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-of-type {
+  border-bottom: none;
+}
+
+.summary-item strong {
+  color: #555;
+}
+
+.summary-item .price {
+  color: #c41e3a;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.status-good {
+  color: #51cf66;
+  padding: 0.75rem;
+  background-color: #f0fdf4;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border-left: 4px solid #51cf66;
+}
+
+.status-warning {
+  color: #ff8c00;
+  padding: 0.75rem;
+  background-color: #fff7ed;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border-left: 4px solid #ff8c00;
+}
+
+.summary-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* Error/Success Banners */
+.error-banner {
+  background-color: #fff5f5;
+  border: 2px solid #ff6b6b;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #c92a2a;
+  font-weight: 600;
+  text-align: center;
+}
+
+.success-banner {
+  background-color: #f0fdf4;
+  border: 2px solid #51cf66;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #2f9e44;
+  font-weight: 600;
+  text-align: center;
+}
+
 @keyframes modalSlideIn {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
