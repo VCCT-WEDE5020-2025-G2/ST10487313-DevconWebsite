@@ -60,6 +60,27 @@ Screenshots demonstrate responsive design tested on smaller breakpoints (e.g., i
 
 *(Screenshots uploaded in the `/screenshots/` folder of the project.)*  
 
+
+## SEO Implementation Notes
+
+### Meta Keywords
+While meta keywords have been implemented in this project to meet assignment requirements, 
+it's important to note that they are no longer used by major search engines for ranking 
+purposes. Google officially stopped using meta keywords for web ranking in September 2009. 
+The tag was deprecated due to widespread abuse through keyword stuffing and other major search engines (Yahoo, Bing) followed.
+
+**Currently:**
+- Google: Does not use (confirmed 2009)
+- Bing: Does not use (confirmed 2014)
+
+**Modern SEO Focus:**
+Instead of meta keywords, modern SEO best practices emphasise:
+
+- Proper heading structure (H1-H6)
+- Meta descriptions (for click-through rates)
+- Alt text for images
+- Page load speed and mobile responsiveness
+
 ## Changelog  
 - **v1.0 (Initial Submission):** Project setup, content research, wireframes, README created.  
 - **v1.1 (Part 2 Submission):** Licensing details added, footer corrected, external stylesheet implemented, CSS styling applied (base, typography, layout, and visual styles), responsive testing performed.  
@@ -71,4 +92,8 @@ Varsity College. (2025) *WEDE5020MM Module Manual*. Cape Town: Varsity College (
 
 Unsplash. (2025) *Free stock photos and images under the Unsplash License*. Available at: https://unsplash.com (Accessed: 29 September 2025).  
 
-Shutterstock. (2025) *Royalty-free images, photos, and vectors*. Available at: https://www.shutterstock.com (Accessed: 29 September 2025). Licensed under Shutterstock Royalty-Free License.  
+Shutterstock. (2025) *Royalty-free images, photos, and vectors*. Available at: https://www.shutterstock.com (Accessed: 29 September 2025). Licensed under Shutterstock Royalty-Free License. 
+
+Google Search Central. (2009, September 21). Google does not use the keywords 
+meta tag in web ranking. Google for Developers. 
+https://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag
