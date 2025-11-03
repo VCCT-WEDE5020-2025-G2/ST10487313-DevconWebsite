@@ -1,117 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding for proper text rendering -->
     <meta charset="UTF-8">
+    
+    <!-- SEO meta description emphasizing free quotes and custom solutions -->
     <meta name="description" content="Request a free quote for solar installation, electrical services, or project management. Devcon delivers custom construction and engineering solutions tailored to your needs. Get started today!">
+    
+    <!-- Meta keywords - deprecated but kept for assignment requirements -->
     <meta name="keywords" content="request a quote, solar installation, electrical services, project management, construction solutions, engineering services, renewable energy, Cape Town, South Africa">
+    
+    <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title optimized for SEO with action-oriented keywords -->
     <title>Request a Quote - Custom Solar, Electrical & Project Solutions | Devcon</title>
+    
+    <!-- Link to main stylesheet containing form styles -->
     <link rel="stylesheet" href="css/style.css">
+    
     <style>
-        /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
-        .enquiry-container {
+        /* ========================================
+           PAGE-SPECIFIC STYLES FOR ENQUIRY PAGE
+        ======================================== */
+        
+        /* Main page container with centered content */
+        .enquiry-page-container {
             max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding: 0 32px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-        .enquiry-breadcrumb {
-            color: #888;
-            font-size: 1em;
-            margin-bottom: 18px;
-        }
-        .enquiry-title {
+        
+        /* Page title styling */
+        .page-title {
             font-size: 3em;
             margin-bottom: 24px;
             color: #222;
         }
-        .enquiry-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 48px;
-            align-items: flex-start;
-        }
-        .enquiry-form {
-            flex: 2;
-            min-width: 320px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px; 
-        }
-        .enquiry-row {
-            display: flex;
-            gap: 24px;
-        }
-        .enquiry-input, .enquiry-textarea, .enquiry-select {
-            width: 100%;
-            padding: 12px 14px;
-            border: none;
-            border-radius: 12px;
-            background: #e0e0e0;
+        
+        /* Subtitle text below main heading */
+        .page-subtitle {
             font-size: 1.1em;
-            margin-bottom: 0;
-            margin-top: 0;
-            resize: none;
-            box-sizing: border-box;
-        }
-        .enquiry-textarea {
-            min-height: 60px;
-            max-width: 100%;
-        }
-        .enquiry-btn {
-            background: #d32f2f;
-            color: #fff;
-            font-size: 1.3em;
-            padding: 18px 48px;
-            border-radius: 16px;
-            border: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-top: 18px;
-            cursor: pointer;
-            transition: background 0.2s;
-            width: fit-content;
-            align-self: flex-end;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .enquiry-btn:hover {
-            background: #b71c1c;
-        }
-        .enquiry-summary {
-            flex: 1.2;
-            min-width: 300px;
-            background: #e0e0e0;
-            border-radius: 18px;
-            padding: 32px 28px;
-            margin-top: 18px;
-        }
-        .enquiry-summary-title {
-            font-size: 2em;
-            margin-bottom: 24px;
-            color: #b71c1c;
+            color: #666;
+            margin-bottom: 2rem;
         }
         
+        /* Two-column layout for form and summary */
+        .enquiry-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
         
-        @media (max-width: 1000px) {
-            .enquiry-flex {
-                flex-direction: column;
-                gap: 32px;
+        /* ========================================
+           RESPONSIVE DESIGN - TABLET AND MOBILE
+        ======================================== */
+        
+        /* Stack form and summary vertically on tablets and smaller */
+        @media (max-width: 968px) {
+            .enquiry-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
-            .enquiry-summary {
-                margin-top: 0;
+        }
+        
+        /* Reduce padding on mobile devices */
+        @media (max-width: 700px) {
+            .enquiry-page-container {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2em;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- header for all pages! Contains the logo and navigation menu -->
+    <!-- Site header with logo and navigation - consistent across all pages -->
     <header>
         <div class="container header-flex">
+            <!-- Company logo with alt text for accessibility -->
             <div class="logo">
                 <img src="images/Logo.avif" alt="Devcon Construction and Engineering Services Logo" style="height:40px;">
             </div>
+            
+            <!-- Main navigation menu -->
             <nav>
                 <ul>
-                    <!-- Main navigation links for the website -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -122,141 +100,163 @@
         </div>
     </header>
 
+    <!-- Main content area for enquiry page -->
     <main>
-  <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-    <h1>Enquiry</h1>
-    <p class="subtitle">Please complete the enquiry form below to request a tailored quote for your chosen service.</p>
-    
-        <div class="enquiry-container">
-      <!-- FORM SECTION -->
-      <div>
-        <form 
-          id="enquiryForm" 
-          action="https://formsubmit.co/marcusfourie123@gmail.com" 
-          method="POST">
-          
-          <!-- Hidden fields -->
-          <input type="hidden" name="_subject" value="New Enquiry from Devcon Website">
-          <input type="hidden" name="_captcha" value="false">
-          
-          <!-- Service -->
-          <div class="form-group">
-            <label for="service">Service</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service...</option>
-              <option value="Solar Installations" data-base-cost="50000">Solar Installations</option>
-              <option value="Electrical Services" data-base-cost="15000">Electrical Services</option>
-              <option value="Project Management" data-base-cost="30000">Project Management</option>
-              <option value="Consulting" data-base-cost="10000">Consulting</option>
-            </select>
-          </div>
+        <div class="enquiry-page-container">
+            <!-- Page heading using H1 for SEO -->
+            <h1 class="page-title">Enquiry</h1>
+            
+            <!-- Instructional text explaining the form purpose -->
+            <p class="page-subtitle">
+                Please complete the enquiry form below to request a tailored quote for your chosen service.
+            </p>
+            
+            <!-- Two-column layout: form on left, summary on right -->
+            <div class="enquiry-layout">
+                
+                <!-- LEFT COLUMN: Enquiry Form -->
+                <div>
+                    <!-- Form submits to FormSubmit.co which emails the data -->
+                    <form 
+                        id="enquiryForm" 
+                        action="https://formsubmit.co/marcusfourie123@gmail.com" 
+                        method="POST">
+                        
+                        <!-- FormSubmit configuration - hidden fields control email behavior -->
+                        <input type="hidden" name="_subject" value="New Enquiry from Devcon Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <!-- Service Selection Dropdown -->
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <!-- Each option has data-base-cost for quote calculation -->
+                                <option value="Solar Installations" data-base-cost="50000">Solar Installations</option>
+                                <option value="Electrical Services" data-base-cost="15000">Electrical Services</option>
+                                <option value="Project Management" data-base-cost="30000">Project Management</option>
+                                <option value="Consulting" data-base-cost="10000">Consulting</option>
+                            </select>
+                        </div>
 
-          <!-- Timeline -->
-          <div class="form-group">
-            <label for="timeline">Timeline</label>
-            <select id="timeline" name="timeline" required>
-              <option value="">Select timeline...</option>
-              <option value="Urgent (1 month)" data-multiplier="1.3">Urgent (1 month)</option>
-              <option value="Standard (3 months)" data-multiplier="1.0">Standard (3 months)</option>
-              <option value="Flexible (6+ months)" data-multiplier="0.9">Flexible (6+ months)</option>
-            </select>
-          </div>
+                        <!-- Timeline/Urgency Selection -->
+                        <div class="form-group">
+                            <label for="timeline">Timeline</label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="">Select timeline...</option>
+                                <!-- Each option has data-multiplier to adjust cost based on urgency -->
+                                <option value="Urgent (1 month)" data-multiplier="1.3">Urgent (1 month)</option>
+                                <option value="Standard (3 months)" data-multiplier="1.0">Standard (3 months)</option>
+                                <option value="Flexible (6+ months)" data-multiplier="0.9">Flexible (6+ months)</option>
+                            </select>
+                        </div>
 
-          <!-- Name -->
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              placeholder="Your Name" 
-              required
-              minlength="2"
-              maxlength="50"
-              pattern="[A-Za-z\s]+"
-              title="Please enter a valid name">
-          </div>
+                        <!-- Customer Name Input -->
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Your Name" 
+                                required
+                                minlength="2"
+                                maxlength="50"
+                                pattern="[A-Za-z\s]+"
+                                title="Please enter a valid name (letters and spaces only)">
+                        </div>
 
-          <!-- Email -->
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              placeholder="you@email.com" 
-              required>
-          </div>
+                        <!-- Customer Email Input -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="you@email.com" 
+                                required
+                                title="Please enter a valid email address">
+                        </div>
 
-          <!-- Project Details -->
-          <div class="form-group">
-            <label for="projectDetails">Project Details</label>
-            <textarea 
-              id="projectDetails" 
-              name="projectDetails" 
-              placeholder="Describe your project..." 
-              required
-              minlength="20"
-              maxlength="500"></textarea>
-          </div>
+                        <!-- Project Description Textarea -->
+                        <div class="form-group">
+                            <label for="projectDetails">Project Details</label>
+                            <textarea 
+                                id="projectDetails" 
+                                name="projectDetails" 
+                                placeholder="Describe your project..." 
+                                required
+                                minlength="20"
+                                maxlength="500"
+                                rows="5"></textarea>
+                        </div>
 
-          <!-- Budget -->
-          <div class="form-group">
-            <label for="budget">Budget (R)</label>
-            <input 
-              type="number" 
-              id="budget" 
-              name="budget" 
-              placeholder="e.g. 50000" 
-              required
-              min="5000"
-              max="10000000"
-              step="1000">
-          </div>
+                        <!-- Budget Input (Number field with min/max validation) -->
+                        <div class="form-group">
+                            <label for="budget">Budget (R)</label>
+                            <input 
+                                type="number" 
+                                id="budget" 
+                                name="budget" 
+                                placeholder="e.g. 50000" 
+                                required
+                                min="5000"
+                                max="10000000"
+                                step="1000">
+                        </div>
 
-          <!-- Contact Method -->
-          <div class="form-group">
-            <label for="contactMethod">Contact Method</label>
-            <select id="contactMethod" name="contactMethod" required>
-              <option value="">Select preference...</option>
-              <option value="Email">Email</option>
-              <option value="Phone">Phone</option>
-              <option value="Both">Both</option>
-            </select>
-          </div>
+                        <!-- Preferred Contact Method Selection -->
+                        <div class="form-group">
+                            <label for="contactMethod">Contact Method</label>
+                            <select id="contactMethod" name="contactMethod" required>
+                                <option value="">Select preference...</option>
+                                <option value="Email">Email</option>
+                                <option value="Phone">Phone</option>
+                                <option value="Both">Both</option>
+                            </select>
+                        </div>
 
-          <!-- Phone (conditional) -->
-          <div class="form-group" id="phoneGroup" style="display: none;">
-            <label for="phone">Phone Number</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              placeholder="+27 12 345 6789"
-              pattern="[\+]?[0-9]{10,13}">
-          </div>
+                        <!-- Conditional Phone Number Field (hidden by default, shown via JavaScript) -->
+                        <div class="form-group" id="phoneGroup" style="display: none;">
+                            <label for="phone">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="+27 12 345 6789"
+                                pattern="[\+]?[0-9]{10,13}"
+                                title="Please enter a valid phone number (10-13 digits)">
+                        </div>
 
-          <button type="submit" class="btn-submit">Request Quote</button>
-        </form>
-      </div>
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-submit">Request Quote</button>
+                    </form>
+                </div>
 
-      <!-- ORDER SUMMARY SECTION -->
-      <div>
-        <div class="order-summary">
-          <h2>Order Summary</h2>
-          <div id="summaryContent">
-            <p class="placeholder">Please select a service and timeline to see your quote estimate.</p>
-          </div>
+                <!-- RIGHT COLUMN: Dynamic Order Summary -->
+                <div>
+                    <!-- Summary box updates in real-time as user fills form -->
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <!-- Summary content populated by JavaScript based on form selections -->
+                        <div id="summaryContent">
+                            <p class="placeholder">
+                                Please select a service and timeline to see your quote estimate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</main>
+    </main>
 
-<script src="js/enquiry.js"></script>
+    <!-- External JavaScript file handles form validation and dynamic summary updates -->
+    <script src="js/enquiry.js"></script>
+    
 </body>
 
-<!-- All the footers are now outside the body tag -->
+<!-- Footer placed outside body tag as per assignment requirements -->
 <footer style="background: #d32f2f; color: #fff; padding: 18px 0; font-size: 1em;">
     <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
         <span style="margin-left:16px;">projectconsulting@devcon.co.za</span>
@@ -264,4 +264,5 @@
         <span style="margin-right:16px;">+27 21 123 4567</span>
     </div>
 </footer>
+
 </html>
