@@ -2,43 +2,63 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding for proper text rendering -->
     <meta charset="UTF-8">
+    
+    <!-- SEO meta description - appears in search results to attract clicks -->
     <meta name="description" content="Learn about Devcon's commitment to quality construction management and engineering excellence. Specialising in sustainable solutions for residential, commercial, and industrial projects across South Africa.">
+    
+    <!-- Meta keywords - deprecated but kept for assignment requirements -->
     <meta name="keywords" content="about devcon, construction company, engineering services, company history, sustainable solutions, quality construction, innovation, client satisfaction, professional team, Cape Town contractors, experienced engineers">
+    
+    <!-- Viewport meta tag ensures responsive behavior on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to main stylesheet for global styles -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Page title optimized for SEO with company name, service description, and established date -->
     <title>About Devcon - Leading Construction Management & Engineering Services Since 2010</title>
+    
     <style>
-        /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
+        /* PAGE-SPECIFIC STYLES: About page layout and accordion functionality */
+        
+        /* Main container for about page content - centers content with max-width */
         .about-main-container {
             max-width: 1100px;
             margin: 50px auto 0 auto;
             padding: 0 24px;
         }
 
+        /* Large page heading styled for visual hierarchy */
         .about-title {
             font-size: 2.8em;
             margin-bottom: 40px;
             color: #222;
         }
 
+        /* Flexbox layout for two-column design on desktop */
         .about-flex {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
         }
 
+        /* Left column takes up more space (2/3 of width) for main content */
         .about-left {
             flex: 2;
             min-width: 320px;
         }
 
+        /* Right column for team photo and information */
         .about-right {
             display: flex;
-            flex-direction: column; /* Default: stack vertically (desktop) */
+            flex-direction: column;
             align-items: center;
             gap: 24px;
         }
+
+        /* Team photo styling with shadow for depth */
         .about-team-img {
             width: 350px;
             max-width: 100%;
@@ -48,81 +68,120 @@
             display: block;
             box-shadow: 0 2px 8px rgba(0,0,0,0.35);
         }
+
+        /* Container for team section text */
         .about-team-section {
             width: 100%;
             max-width: 350px;
         }
+
+        /* Section headings that act as accordion toggle buttons */
         .about-section-title {
             font-size: 1.5em;
             margin: 32px 0 16px 0;
             color: #222;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
-        .about-team-list {
-            margin-top: 10px;
+        /* Hover effect for accordion headers to indicate interactivity */
+        .about-section-title:hover {
+            color: #d32f2f;
         }
 
-        .about-team-list li {
+        /* Accordion content sections - hidden by default, shown when active */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        /* Active state for accordion - expands to show content */
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+
+        /* Content box styling for consistent appearance across sections */
+        .content-box {
             background: #f5f5f5;
-            margin-bottom: 10px;
-            padding: 8px 16px;
+            padding: 18px 22px;
+            border-radius: 10px;
+            color: #222;
+            font-size: 1.08em;
+            margin-bottom: 24px;
+        }
+
+        /* Team description box with slightly different padding */
+        .team-box {
+            background: #f5f5f5;
+            padding: 14px 18px;
             border-radius: 6px;
             color: #444;
             font-weight: 500;
-            width: 80%;
         }
-        /* Responsive adjustments for smaller screens */
-       /* For screens 1100px and below (iPad and smaller) */
-@media (max-width: 1100px) {
-    .about-flex {
-        flex-direction: column;
-        gap: 32px;
-    }
-    .about-left, .about-right {
-        min-width: 0;
-        width: 100%;
-        flex: unset;
-    }
-    .about-right {
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 18px;
-    }
-    .about-team-img, .about-team-section {
-        max-width: 50%;
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-    }
-    .about-team-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 160px;
-    }
-    .about-right img {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 18px;
-    }
-    .about-main-container {
-        padding: 0 8px;
+
+        /* RESPONSIVE DESIGN: Adjustments for tablets and smaller screens */
+        @media (max-width: 1100px) {
+            /* Stack columns vertically on smaller screens */
+            .about-flex {
+                flex-direction: column;
+                gap: 32px;
             }
 
+            /* Remove flex properties and make columns full width */
+            .about-left, .about-right {
+                min-width: 0;
+                width: 100%;
+                flex: unset;
+            }
+
+            /* On tablets, arrange team photo and text side by side */
+            .about-right {
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 18px;
+            }
+
+            /* Team photo and section take up equal width on tablets */
+            .about-team-img, .about-team-section {
+                max-width: 50%;
+                width: 100%;
+                height: 160px;
+            }
+
+            /* Ensure team image maintains aspect ratio */
+            .about-team-img {
+                object-fit: cover;
+            }
+
+            /* Align team text at bottom of container */
+            .about-team-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                height: 160px;
+            }
+
+            /* Reduce padding on smaller screens for more space */
+            .about-main-container {
+                padding: 0 8px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- header for all pages! Contains the logo and navigation menu -->
+    <!-- Site header with logo and navigation - consistent across all pages -->
     <header>
         <div class="container header-flex">
+            <!-- Company logo with alt text for accessibility -->
             <div class="logo">
                 <img src="images/Logo.avif" alt="Devcon Construction and Engineering Services Logo" style="height:40px;">
             </div>
+            
+            <!-- Main navigation menu -->
             <nav>
                 <ul>
-                    <!-- Main navigation links for the website -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -133,96 +192,122 @@
         </div>
     </header>
 
+    <!-- Main content area for about page -->
     <main class="about-main-container">
-    <h1 class="about-title">About Us</h1>
-    <div class="about-flex">
-        <!-- LEFT COLUMN: Company History & Mission/Vision -->
-        <div class="about-left">
-            <!-- Company History Accordion -->
-            <section>
-                <h2 class="about-section-title accordion-header" onclick="toggleAccordion('history')">
-                    Company History
-                </h2>
-                <div id="history" class="accordion-content">
-                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 24px;">
-                        Founded in 2010, Devcon has grown from a small local contractor into a leading provider of
-                        construction and engineering services across the region. Our journey began with a vision to
-                        deliver quality and innovation in every project, and today, our portfolio spans residential,
-                        commercial, and industrial sectors.
-                    </div>
-                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 24px;">
-                        Over the years, we have built a reputation for reliability, technical expertise, and a
-                        client-first approach. Our team's dedication has enabled us to complete hundreds of successful
-                        projects, always with a focus on sustainability and excellence.
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Mission & Vision Accordion -->
-            <section>
-                <h2 class="about-section-title accordion-header" onclick="toggleAccordion('mission')">
-                    Mission &amp; Vision
-                </h2>
-                <div id="mission" class="accordion-content">
-                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 16px;">
-                        <strong>Mission:</strong> To deliver innovative, sustainable, and high-quality construction
-                        solutions that exceed client expectations and contribute positively to our communities.
-                    </div>
-                    <div style="background: #f5f5f5; padding: 18px 22px; border-radius: 10px; color: #222; font-size: 1.08em; margin-bottom: 40px;">
-                        <strong>Vision:</strong> To be recognized as the most trusted and forward-thinking construction
-                        partner, setting new standards for excellence and environmental responsibility.
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- Page title using H1 for SEO and hierarchy -->
+        <h1 class="about-title">About Us</h1>
         
-        <!-- RIGHT COLUMN: Team Accordion -->
-        <div class="about-right">
-            <img src="images/Team.jpg" alt="Devcon Team Photo" class="about-team-img">
-            <section class="about-team-section">
-                <h2 class="about-section-title accordion-header" onclick="toggleAccordion('team')" style="margin-top:0;">
-                    Team
-                </h2>
-                <div id="team" class="accordion-content">
-                    <p style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px; color: #444; font-weight: 500;">
-                        Devcon's dedicated team of project managers, engineers, and electricians are committed to
-                        professionalism, safety, and innovation.
-                    </p>
-                </div>
-            </section>
+        <!-- Two-column layout container -->
+        <div class="about-flex">
+            <!-- LEFT COLUMN: Contains company history and mission/vision accordions -->
+            <div class="about-left">
+                
+                <!-- Company History Section with accordion functionality -->
+                <section>
+                    <!-- Clickable header that toggles accordion open/closed -->
+                    <h2 class="about-section-title accordion-header" onclick="toggleAccordion('history')">
+                        Company History
+                    </h2>
+                    <!-- Collapsible content area - opens to show history details -->
+                    <div id="history" class="accordion-content">
+                        <!-- First paragraph: Company founding and growth -->
+                        <div class="content-box">
+                            Founded in 2010, Devcon has grown from a small local contractor into a leading provider of
+                            construction and engineering services across the region. Our journey began with a vision to
+                            deliver quality and innovation in every project, and today, our portfolio spans residential,
+                            commercial, and industrial sectors.
+                        </div>
+                        <!-- Second paragraph: Company reputation and achievements -->
+                        <div class="content-box">
+                            Over the years, we have built a reputation for reliability, technical expertise, and a
+                            client-first approach. Our team's dedication has enabled us to complete hundreds of successful
+                            projects, always with a focus on sustainability and excellence.
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Mission & Vision Section with accordion functionality -->
+                <section>
+                    <!-- Clickable header for mission/vision accordion -->
+                    <h2 class="about-section-title accordion-header" onclick="toggleAccordion('mission')">
+                        Mission &amp; Vision
+                    </h2>
+                    <!-- Collapsible content showing mission and vision statements -->
+                    <div id="mission" class="accordion-content">
+                        <!-- Mission statement: What the company does and why -->
+                        <div class="content-box">
+                            <strong>Mission:</strong> To deliver innovative, sustainable, and high-quality construction
+                            solutions that exceed client expectations and contribute positively to our communities.
+                        </div>
+                        <!-- Vision statement: Where the company aspires to be -->
+                        <div class="content-box" style="margin-bottom: 40px;">
+                            <strong>Vision:</strong> To be recognized as the most trusted and forward-thinking construction
+                            partner, setting new standards for excellence and environmental responsibility.
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- RIGHT COLUMN: Team photo and information -->
+            <div class="about-right">
+                <!-- Team photo with descriptive alt text -->
+                <img src="images/Team.jpg" alt="Devcon Team Photo" class="about-team-img">
+                
+                <!-- Team section with accordion -->
+                <section class="about-team-section">
+                    <!-- Team accordion header -->
+                    <h2 class="about-section-title accordion-header" onclick="toggleAccordion('team')" style="margin-top:0;">
+                        Team
+                    </h2>
+                    <!-- Team description content -->
+                    <div id="team" class="accordion-content">
+                        <p class="team-box">
+                            Devcon's dedicated team of project managers, engineers, and electricians are committed to
+                            professionalism, safety, and innovation.
+                        </p>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<script>
-function toggleAccordion(id) {
-    const content = document.getElementById(id);
-    const header = content.previousElementSibling;
-    
-    // Toggle the content
-    content.classList.toggle('active');
-    header.classList.toggle('active');
-    
-    allContents.forEach((item, index) => {
-        if (item.id !== id && item.classList.contains('active')) {
-            item.classList.remove('active');
-            allHeaders[index].classList.remove('active');
-        }
+    <!-- JavaScript for accordion functionality -->
+    <script>
+    /**
+     * Toggles accordion sections open and closed
+     * Allows multiple accordions to be open simultaneously for flexible content viewing
+     * @param {string} id - The ID of the accordion content to toggle
+     */
+    function toggleAccordion(id) {
+        // Get the content div for this accordion
+        const content = document.getElementById(id);
+        // Get the header (previous sibling element)
+        const header = content.previousElementSibling;
+        
+        // Toggle active class to show/hide this accordion
+        // Only affects the clicked accordion, doesn't close others
+        content.classList.toggle('active');
+        header.classList.toggle('active');
+    }
+
+    /**
+     * Initialize page with first accordion open by default
+     * Provides better UX by showing content immediately
+     */
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleAccordion('history');
     });
-}
-
-// Optional: Open the first accordion by default
-document.addEventListener('DOMContentLoaded', function() {
-    toggleAccordion('history');
-});
 </script>
     
 </body>
-<!-- All footers are now outside the body tag -->
+
+<!-- Footer placed outside body tag as per assignment requirements -->
 <footer style="background: #d32f2f; color: #fff; padding: 18px 0; font-size: 1em;">
     <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
         <span style="margin-left:16px;">projectconsulting@devcon.co.za</span>
         <span style="text-align:center; flex:1;">&copy; 2025 Devcon. All rights reserved.</span>
         <span style="margin-right:16px;">+27 21 123 4567</span>
     </div>
-    </footer>
+</footer>
+
+</html>
