@@ -8,7 +8,7 @@ Devcon Company Website
 - **Student Number:** ST10487313  
 - **Course:** WEDE5020
 - **Institution:** Varsity College
-- **Github Link:**https://github.com/VCCT-WEDE5020-2025-G2/ST10487313-DevconWebsite.git
+- **Github Link:** https://github.com/VCCT-WEDE5020-2025-G2/ST10487313-DevconWebsite.git
 
 ## Project Overview
 Devcon is a South African business specialising in project management, electrical installations, contract management, and solar energy solutions. This project involves the creation of a responsive, professional website to establish Devcon's online presence, showcase services, and provide clients with an enquiry platform.
