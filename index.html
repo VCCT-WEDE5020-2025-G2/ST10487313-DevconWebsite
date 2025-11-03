@@ -2,25 +2,38 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding ensures proper display of special characters and international text -->
     <meta charset="UTF-8">
+    
+    <!-- Page title appears in browser tabs and search results - optimized for SEO with key services -->
     <title>Devcon - Electrical, Solar and Management Services for Surrounding Regions</title>
-    <meta name="description" content="Devcon provides expert electrical, solar installation, and project management services across South Africa. Quality construction managementand engineering solutions for residential, commercial, and industrial projects.">
+    
+    <!-- Meta description shown in search engine results - compelling summary to improve click-through rates -->
+    <meta name="description" content="Devcon provides expert electrical, solar installation, and project management services across South Africa. Quality construction management and engineering solutions for residential, commercial, and industrial projects.">
+    
+    <!-- Meta keywords are deprecated and ignored by major search engines (Google since 2009, Bing since 2014)
+         Kept here only for assignment requirements but serves no functional SEO purpose -->
     <meta name="keywords" content="devcon, electrical services, solar installation, project management, construction services, engineering solutions, solar panels, electrical contractors, renewable energy, South Africa, Cape Town, residential electrical, commercial electrical, industrial projects">
+    
+    <!-- Viewport meta tag ensures responsive design works properly on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to external stylesheet - keeps HTML clean and separates presentation from structure -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- The <head> section sets up the page's metadata, title, and links to the main stylesheet -->
 </head>
 
 <body>
-    <!-- header for all pages! Contains the logo and navigation menu -->
+    <!-- Site header contains branding and main navigation - consistent across all pages -->
     <header>
         <div class="container header-flex">
+            <!-- Company logo with descriptive alt text for accessibility and SEO -->
             <div class="logo">
                 <img src="images/Logo.avif" alt="Devcon Construction and Engineering Services Logo" style="height:40px;">
             </div>
+            
+            <!-- Primary navigation menu - simple list-based structure for semantic HTML -->
             <nav>
                 <ul>
-                    <!-- Main navigation links for the website -->
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -30,17 +43,25 @@
             </nav>
         </div>
     </header>
-    <!-- Placeholder for a large banner or image at the top of the homepage -->
+
+    <!-- Hero banner section - large visual element to grab attention on homepage -->
     <section class="hero-banner"></section>
+
+    <!-- Main content section showcasing company overview and service previews -->
     <section class="about-preview">
+        <!-- H1 heading for SEO - only one per page, contains primary keywords -->
         <h1>Devcon - Electrical, Solar and Management for Surrounding Regions</h1>
+        
+        <!-- Company introduction paragraph explaining core services and value proposition -->
         <p>Devcon is a leading provider of construction and engineering services, specializing in sustainable solutions
             for residential, commercial, and industrial projects. With a commitment to quality and innovation, we
             deliver exceptional results that exceed client expectations.
         </p>
-        <!-- Preview images and titles for three main service areas -->
+        
+        <!-- Grid of three service preview cards with images and headings -->
         <div class="about-images">
             <div>
+                <!-- Each image has descriptive alt text for accessibility and SEO optimization -->
                 <img src="images/Solar.jpg" alt="Solar services - Devcon renewable energy solutions">
                 <h3>Solar Solutions</h3>
             </div>
@@ -53,7 +74,9 @@
                 <h3>Project Management</h3>
             </div>
         </div>
-        <div style="text-align:center; margin-top: 40px;">
+        
+        <!-- Call-to-action button directing users to full services page -->
+        <div class="cta-container">
             <a href="services.html" class="btn-primary">All Services</a>
         </div>
     </section>
