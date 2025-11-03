@@ -1,180 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding for proper text rendering -->
     <meta charset="UTF-8">
+    
+    <!-- SEO meta description emphasizing contact options and services -->
     <meta name="description" content="Contact Devcon for expert solar installation, electrical services, and project management. Get in touch with our team for quality construction and engineering solutions tailored to your needs.">
+    
+    <!-- Meta keywords - deprecated but kept for assignment requirements -->
     <meta name="keywords" content="contact devcon, solar installation, electrical services, project management, construction solutions, engineering services, renewable energy, Cape Town, South Africa">
+    
+    <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to main stylesheet containing form and layout styles -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Page title optimized for SEO with service keywords -->
     <title>Contact Devcon - Get in Touch for Solar, Engineering & Construction Management Services</title>
 
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+    <!-- Leaflet CSS for interactive map - includes integrity hash for security -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
 
     <style>
-        /* PAGE-SPECIFIC STYLES: Styles for layout, spacing, and responsive design */
-        .contact-container {
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding: 0 32px;
+        /* ========================================
+           PAGE-SPECIFIC STYLES FOR CONTACT PAGE
+        ======================================== */
+        
+        /* Map container within info card - styled for proper display */
+        .map-card {
+            padding: 20px;
         }
-        .contact-title {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #222;
+        
+        /* Heading within map card */
+        .map-card h3 {
+            margin-bottom: 15px;
         }
-        .contact-intro {
-            font-size: 1.15em;
-            color: #444;
-            margin-bottom: 32px;
-        }
-        .contact-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 48px;
-            align-items: flex-start;
-            margin-bottom: 36px;
-        }
-        .contact-form-box {
-            background: #e0e0e0;
-            border-radius: 8px;
-            padding: 28px 24px 24px 24px;
-            min-width: 300px;
-            max-width: 350px;
-            flex: 1;
-        }
-        .contact-form-label {
-            font-size: 1.1em;
-            margin-bottom: 6px;
-            color: #222;
-            text-align: left;
-            display: block;
-        }
-        .contact-form-input, .contact-form-textarea {
+        
+        /* Interactive map element - full width within card */
+        .map-card #map {
             width: 100%;
-            padding: 12px 14px;
-            border: none;
-            border-radius: 18px;
-            background: #ccc;
-            font-size: 1.1em;
-            margin-bottom: 18px;
-            margin-top: 2px;
-            resize: none;
-            box-sizing: border-box;
+            height: 300px;
+            border-radius: 8px;
+            margin: 15px 0;
+            background: #ddd; /* Fallback color while map loads */
         }
-        .contact-form-textarea {
-            min-height: 70px;
-        }
-        .contact-form-instructions {
-            font-size: 0.98em;
-            color: #666;
-            margin-bottom: 16px;
-        }
-        .contact-form-btn {
-            background: #c00;
-            color: #fff;
-            font-size: 1.2em;
-            padding: 12px 0;
-            border-radius: 18px;
-            border: none;
-            font-weight: bold;
-            width: 60%;
-            margin: 0 auto;
-            display: block;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .contact-form-btn:hover {
-            background: #c00;
-        }
-        .contact-map-box {
-            display: none;
-        }
-        #map {
-            width: 95%;
-            height: 220px;
-            border-radius: 12px;
-            margin-top: 24px;
-            margin-bottom: 10px;
-            background: #ddd; /* Fallback background */
-        }
-        .contact-map-placeholder {
-            width: 95%;
-            height: 220px;
-            background: #d3d3d3;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2em;
-            color: #222;
-            margin-top: 24px;
-            margin-bottom: 10px;
-        }
+        
+        /* Map caption text styling */
         .contact-map-caption {
             font-size: 0.95em;
             color: #666;
             text-align: center;
             margin-top: 10px;
         }
-        
-        @media (min-width: 1000px) {
-            .contact-container {
-                max-width: 1600px;
-                padding: 0 60px;
-            }
-            .contact-flex {
-                gap: 80px;
-                justify-content: center;
-            }
-            .contact-form-box,
-            .contact-map-box {
-                max-width: 600px;
-                min-width: 400px;
-                width: 100%;
-            }
-        }
-        @media (max-width: 700px) {
-            .contact-title {
-                font-size: 2em;
-            }
-            .contact-info-bar {
-                flex-direction: column;
-                gap: 18px;
-                font-size: 1em;
-                padding: 24px 0;
-            }
-        }
-
-        /* Map styling within info card */
-        .map-card {
-            padding: 20px;
-        }
-        
-        .map-card h3 {
-            margin-bottom: 15px;
-        }
-        
-        .map-card #map {
-            width: 100%;
-            height: 300px;
-            border-radius: 8px;
-            margin: 15px 0;
-            background: #ddd;
-        }
     </style>
 </head>
+
 <body>
-    <!-- header for all pages! Contains the logo and navigation menu -->
+    <!-- Site header with logo and navigation - consistent across all pages -->
     <header>
         <div class="container header-flex">
+            <!-- Company logo with alt text for accessibility -->
             <div class="logo">
                 <img src="images/Logo.avif" alt="Devcon Construction and Engineering Services Logo" style="height:40px;">
             </div>
+            
+            <!-- Main navigation menu -->
             <nav>
                 <ul>
-                    <!-- Main navigation links for the website -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -185,215 +80,235 @@
         </div>
     </header>
 
+    <!-- Main content area for contact page -->
     <main>
-    <div class="contact-page-container">
-      <div class="contact-header">
-        <h1>Contact Us</h1>
-        <p>We're here to help! Reach out to us with your questions or project needs.</p>
-      </div>
-
-      <div class="contact-content">
-        <!-- CONTACT FORM SECTION -->
-        <div class="contact-form-section">
-          <div class="form-intro">
-            <h2>Send Us a Message</h2>
-            <p>Complete the form and our team will respond within 2 business days.</p>
-          </div>
-
-          <form 
-            id="contactForm" 
-            action="https://formsubmit.co/marcusfourie123@gmail.com" 
-            method="POST">
-            
-            <!-- FormSubmit Configuration -->
-            <input type="hidden" name="_subject" value="New Contact Message from Devcon Website">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            
-            <!-- Name -->
-            <div class="form-group">
-              <label for="name">Name <span class="required">*</span></label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                placeholder="Your Name" 
-                required
-                minlength="2"
-                maxlength="50"
-                pattern="[A-Za-z\s]+"
-                title="Please enter a valid name (letters and spaces only)">
+        <div class="contact-page-container">
+            <!-- Page header with title and introductory text -->
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>We're here to help! Reach out to us with your questions or project needs.</p>
             </div>
 
-            <!-- Email -->
-            <div class="form-group">
-              <label for="email">Email <span class="required">*</span></label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                placeholder="you@email.com" 
-                required
-                title="Please enter a valid email address">
-            </div>
+            <!-- Two-column layout: form on left, info cards on right -->
+            <div class="contact-content">
+                
+                <!-- LEFT COLUMN: Contact Form Section -->
+                <div class="contact-form-section">
+                    <!-- Form introduction -->
+                    <div class="form-intro">
+                        <h2>Send Us a Message</h2>
+                        <p>Complete the form and our team will respond within 2 business days.</p>
+                    </div>
 
-            <!-- Phone -->
-            <div class="form-group">
-              <label for="phone">Phone Number (Optional)</label>
-              <input 
-                type="tel" 
-                id="phone" 
-                name="phone" 
-                placeholder="+27 12 345 6789"
-                pattern="[\+]?[0-9]{10,13}"
-                title="Please enter a valid phone number (10-13 digits)">
-            </div>
+                    <!-- Contact form submits to FormSubmit.co which emails the data -->
+                    <form 
+                        id="contactForm" 
+                        action="https://formsubmit.co/marcusfourie123@gmail.com" 
+                        method="POST">
+                        
+                        <!-- FormSubmit configuration - hidden fields control email behavior -->
+                        <input type="hidden" name="_subject" value="New Contact Message from Devcon Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <!-- Customer Name Input -->
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Your Name" 
+                                required
+                                minlength="2"
+                                maxlength="50"
+                                pattern="[A-Za-z\s]+"
+                                title="Please enter a valid name (letters and spaces only)">
+                        </div>
 
-            <!-- Message Type -->
-            <div class="form-group">
-              <label for="messageType">Message Type <span class="required">*</span></label>
-              <select id="messageType" name="messageType" required>
-                <option value="">Select message type...</option>
-                <option value="General Inquiry">General Inquiry</option>
-                <option value="Project Quote">Project Quote Request</option>
-                <option value="Technical Support">Technical Support</option>
-                <option value="Billing Question">Billing Question</option>
-                <option value="Feedback">Feedback</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+                        <!-- Customer Email Input -->
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="you@email.com" 
+                                required
+                                title="Please enter a valid email address">
+                        </div>
 
-            <!-- Message -->
-            <div class="form-group">
-              <label for="message">Message <span class="required">*</span></label>
-              <textarea 
-                id="message" 
-                name="message" 
-                placeholder="Type your message..." 
-                required
-                minlength="10"
-                maxlength="1000"
-                rows="6"></textarea>
-              <small class="char-count">0 / 1000 characters</small>
-            </div>
+                        <!-- Message Type Dropdown -->
+                        <div class="form-group">
+                            <label for="messageType">Message Type <span class="required">*</span></label>
+                            <select id="messageType" name="messageType" required>
+                                <option value="">Select message type...</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Project Quote">Project Quote Request</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Billing Question">Billing Question</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="btn-submit">Send Message</button>
-          </form>
+                        <!-- Message Textarea with Character Counter -->
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                placeholder="Type your message..." 
+                                required
+                                minlength="10"
+                                maxlength="1000"
+                                rows="6"></textarea>
+                            <!-- Character counter updated by JavaScript in real-time -->
+                            <small class="char-count">0 / 1000 characters</small>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- RIGHT COLUMN: Information Cards -->
+                <div class="contact-info-section">
+                    
+                    <!-- Response Time Information Card -->
+                    <div class="info-card">
+                        <h3>Response Time</h3>
+                        <p>We typically respond to all inquiries within <strong>2 business days</strong>. For urgent matters, please call us directly.</p>
+                    </div>
+
+                    <!-- Interactive Map Card showing service area -->
+                    <div class="info-card map-card">
+                        <h3>Our Service Area</h3>
+                        <!-- Map container - populated by Leaflet.js below -->
+                        <div id="map"></div>
+                        <!-- Caption explaining the map -->
+                        <p class="contact-map-caption">
+                            Serving Windhoek, Namibia and surrounding regions.
+                        </p>
+                    </div>
+
+                    <!-- Contact Details Information Card -->
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        
+                        <!-- Email Contact -->
+                        <div class="info-item">
+                            <span class="icon">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p>projectconsulting@devcon.co.za</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Contact -->
+                        <div class="info-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+27 61 324 6887</p>
+                            </div>
+                        </div>
+
+                        <!-- Physical Address -->
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <strong>Address</strong>
+                                <p>Windhoek, Namibia</p>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours -->
+                        <div class="info-item">
+                            <span class="icon">⏰</span>
+                            <div>
+                                <strong>Business Hours</strong>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-
-        <!-- RIGHT SIDE: RESPONSE TIME + MAP SECTION -->
-        <div class="contact-info-section">
-          <!-- Response Time Card -->
-          <div class="info-card">
-            <h3>Response Time</h3>
-            <p>We typically respond to all inquiries within <strong>2 business days</strong>. For urgent matters, please call us directly.</p>
-          </div>
-
-          <!-- Map Card -->
-          <div class="info-card map-card">
-            <h3>Our Service Area</h3>
-            <div id="map"></div>
-            <p class="contact-map-caption">
-              Serving Windhoek, Namibia and surrounding regions.
-            </p>
-          </div>
-
-          <!-- Contact Information Card -->
-          <div class="info-card">
-            <h3>Contact Information</h3>
-            
-            <div class="info-item">
-              <span class="icon">📧</span>
-              <div>
-                <strong>Email</strong>
-                <p>projectconsulting@devcon.co.za</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <span class="icon">📞</span>
-              <div>
-                <strong>Phone</strong>
-                <p>+27 21 123 4567</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <span class="icon">📍</span>
-              <div>
-                <strong>Address</strong>
-                <p>Windhoek, Namibia</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <span class="icon">⏰</span>
-              <div>
-                <strong>Business Hours</strong>
-                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                <p>Saturday: 9:00 AM - 1:00 PM</p>
-                <p>Sunday: Closed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-        </div>
-    </div>
     </main>
 
+    <!-- External JavaScript file handles form validation and character counting -->
     <script src="js/contact.js"></script>
 
-    <!-- Leaflet JavaScript -->
+    <!-- Leaflet JavaScript library for interactive maps -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
 
+    <!-- Map Initialization Script -->
     <script>
-    // Initialize the map centered on Windhoek, Namibia
-    var map = L.map('map').setView([-22.5609, 17.0658], 11);
+        /**
+         * Initialize Leaflet map centered on Windhoek, Namibia
+         * Creates interactive map with marker, popup, and service area circle
+         */
+        
+        // Create map centered on Windhoek coordinates with zoom level 11
+        var map = L.map('map').setView([-22.5609, 17.0658], 11);
 
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        // Add OpenStreetMap tile layer - free, open-source map tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    // Add a marker for Devcon's location
-    var marker = L.marker([-22.5609, 17.0658]).addTo(map);
+        // Add marker pin at Devcon's location
+        var marker = L.marker([-22.5609, 17.0658]).addTo(map);
 
-    // Add a popup to the marker
-    marker.bindPopup('<b>Devcon</b><br>Windhoek, Namibia<br>Construction & Engineering Services').openPopup();
+        // Attach popup to marker with company information
+        marker.bindPopup('<b>Devcon</b><br>Windhoek, Namibia<br>Construction & Engineering Services').openPopup();
 
-    // Optional: Add a circle to show service area
-    var circle = L.circle([-22.5609, 17.0658], {
-        color: '#c00',
-        fillColor: '#c00',
-        fillOpacity: 0.1,
-        radius: 50000 // 50km radius
-    }).addTo(map);
+        // Add circle overlay showing 50km service radius
+        var circle = L.circle([-22.5609, 17.0658], {
+            color: '#d32f2f',        // Border color (brand red)
+            fillColor: '#d32f2f',    // Fill color (brand red)
+            fillOpacity: 0.1,        // Semi-transparent fill
+            radius: 50000            // 50km radius in meters
+        }).addTo(map);
 
-    // Disable scroll wheel zoom (optional, for better UX)
-    map.scrollWheelZoom.disable();
-
-    // Enable zoom on click
-    map.on('click', function() {
-        map.scrollWheelZoom.enable();
-    });
-
-    map.on('mouseout', function() {
+        /**
+         * Disable scroll wheel zoom by default to prevent accidental zooming
+         * while scrolling the page - improves user experience
+         */
         map.scrollWheelZoom.disable();
-    });
+
+        /**
+         * Enable scroll wheel zoom when user clicks on map
+         * Shows intent to interact with the map
+         */
+        map.on('click', function() {
+            map.scrollWheelZoom.enable();
+        });
+
+        /**
+         * Disable scroll wheel zoom when mouse leaves map
+         * Returns to default scroll behavior
+         */
+        map.on('mouseout', function() {
+            map.scrollWheelZoom.disable();
+        });
     </script>
 
-    <!-- Consistent Footer -->
-    <footer style="background: #d32f2f; color: #fff; padding: 18px 0; font-size: 1em;">
-        <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-            <span style="margin-left:16px;">projectconsulting@devcon.co.za</span>
-            <span style="text-align:center; flex:1;">&copy; 2025 Devcon. All rights reserved.</span>
-            <span style="margin-right:16px;">+27 21 123 4567</span>
-        </div>
-    </footer>
+</body>
 
-    </body>
+<!-- Footer placed outside body tag as per assignment requirements -->
+<footer style="background: #d32f2f; color: #fff; padding: 18px 0; font-size: 1em;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+        <span style="margin-left:16px;">projectconsulting@devcon.co.za</span>
+        <span style="text-align:center; flex:1;">&copy; 2025 Devcon. All rights reserved.</span>
+        <span style="margin-right:16px;">+27 21 123 4567</span>
+    </div>
+</footer>
+
 </html>
