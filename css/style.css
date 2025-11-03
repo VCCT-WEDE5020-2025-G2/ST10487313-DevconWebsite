@@ -479,6 +479,32 @@ nav ul li a.active {
   align-items: start; /* Add this line */
 }
 
+/* Button Styling with Hover Effect */
+.btn-primary {
+    background: #c00;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 12px 30px;
+    border-radius: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 968px) {
   .contact-content {
     grid-template-columns: 1fr;
