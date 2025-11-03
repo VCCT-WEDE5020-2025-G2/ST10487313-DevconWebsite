@@ -323,7 +323,7 @@ form.addEventListener('submit', function(e) {
       if (response.ok) {
         // Submission successful - redirect to thank you page
         setTimeout(() => {
-          window.location.href = 'thank-you.html'; 
+          window.location.href = 'thankYou.html'; 
         }, 1000);
       } else {
         // Server returned an error
